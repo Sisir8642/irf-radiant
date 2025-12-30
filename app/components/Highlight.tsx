@@ -8,37 +8,37 @@ const sessions = [
     id: 1,
     title: "SHIFTING GLOBAL ORDER",
     subtitle: "NAVIGATING NEW GEOPOLITICAL REALITIES",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   },
   {
     id: 2,
     title: "NEPAL'S PATH TO PROSPERITY:",
     subtitle: "EXPLORING ECONOMIC DIPLOMACY",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   },
   {
     id: 3,
     title: "NEPAL'S FOREIGN POLICY:",
     subtitle: "CHARTING AN INDEPENDENT COURSE",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   },
   {
     id: 4,
     title: "A CONCLAVE ON NEPAL'S",
     subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   },
   {
     id: 5,
     title: "A CONCLAVE ON NEPAL'S",
     subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   },
   {
     id: 6,
     title: "A CONCLAVE ON NEPAL'S",
     subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/api/placeholder/400/300"
+    image: "/images/dummy.png"
   }
 ];
 
@@ -137,7 +137,7 @@ export default function HimalayanDialogueSection() {
                 {[0, 1, 2].map((index) => (
                   <div key={index} className="min-w-full h-full relative">
                     <img
-                      src="/api/placeholder/600/500"
+                      src="/images/dummy.png"
                       alt={`Slide ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
