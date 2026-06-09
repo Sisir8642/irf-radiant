@@ -65,9 +65,23 @@ export default function Header() {
                   <Link
                     href="/himalayan_dialogue"
                     className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
-             transition-all duration-300 hover:text-[#010c12] hover:border-[#6f2e18]"
+             transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
                   >
                     Himalayan Dialogue
+                  </Link>
+                  <Link
+                    href="/commentaries"
+                    className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
+             transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
+                  >
+                    Commentaries
+                  </Link>
+                  <Link
+                    href="/himalayan_dialogue"
+                    className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
+             transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
+                  >
+                    India Diplomacy
                   </Link>
 
 
