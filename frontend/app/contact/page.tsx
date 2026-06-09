@@ -14,6 +14,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
+  const baseAPI = process
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -26,26 +27,57 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = () => {
-    if (!formData.firstName || !formData.email || !formData.message) {
-      setSubmitMessage('Please fill in all required fields.');
-      return;
-    }
+  const handleSubmit = async () => {
+  if (!formData.firstName || !formData.email || !formData.message) {
+    setSubmitMessage("Please fill in all required fields.");
+    return;
+  }
+
+  try {
     setIsSubmitting(true);
-    setSubmitMessage('');
-    setTimeout(() => {
-      setSubmitMessage('Message sent successfully! We will get back to you soon.');
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/send/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setSubmitMessage(
+        "Message sent successfully! We will get back to you soon."
+      );
+
       setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
       });
+
       setCharCount(0);
-      setIsSubmitting(false);
-    }, 1500);
-  };
+    } else {
+      setSubmitMessage(data.error || "Failed to send message.");
+    }
+  } catch (error) {
+    setSubmitMessage("Something went wrong.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const contactInfo = [
     {
