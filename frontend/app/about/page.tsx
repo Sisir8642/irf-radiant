@@ -371,7 +371,7 @@ export default function Page() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                             {/* Geopolitics */}
-                            <div className="bg-white p-7 rounded-xl shadow-sm border-t-4 border-[#2B698E]
+                            <div className=" p-7 rounded-xl shadow-sm border-l-4 bg-[#2B698E] border-[#2B698E]
             transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]">
                                 <h3 className="text-xl font-semibold mb-4 text-[#2B698E]">
                                     Geopolitics and Foreign Policy
@@ -689,7 +689,7 @@ export default function Page() {
                     </div>
 
                     {/* Contact Us */}
-                    <div>
+                    {/* <div>
                         <h2 className="text-4xl font-bold text-[#1E2A3A] mb-4">
                             Contact Us
                         </h2>
@@ -699,7 +699,6 @@ export default function Page() {
 
                             <div className="grid lg:grid-cols-3">
 
-                                {/* Left Side */}
                                 <div className="bg-gradient-to-br from-[#1E2A3A] to-[#2B698E] p-10 text-white flex flex-col justify-center">
 
                                     <div className="w-20 h-20 rounded-full bg-[#7ABDE4]/20 border border-[#7ABDE4]/30 flex items-center justify-center text-3xl font-bold mb-6">
@@ -728,7 +727,6 @@ export default function Page() {
                                     </p>
                                 </div>
 
-                                {/* Right Side */}
                                 <div className="lg:col-span-2 p-10">
 
                                     <h4 className="text-2xl font-semibold text-[#1E2A3A] mb-8">
@@ -803,7 +801,7 @@ export default function Page() {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </section>

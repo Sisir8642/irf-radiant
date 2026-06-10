@@ -53,6 +53,8 @@ export default function Header() {
              hover:text-[#49a8df] hover:border-2 hover:rounded-2xl hover:border-[#4e56b5]">HOME</Link>
               <Link href="/about" className="text-[#7ABDE4] font-medium px-3 py-1 rounded transition-all duration-300 
              hover:text-[#49a8df]  hover:border-2 hover:rounded-2xl hover:border-[#4e56b5]">ABOUT US</Link>             
+              <Link href="/commentaries" className="text-[#7ABDE4] font-medium px-3 py-1 rounded transition-all duration-300 
+             hover:text-[#49a8df]  hover:border-2 hover:rounded-2xl hover:border-[#4e56b5]">COMMENTARIES</Link>             
              <div className="relative group">
                 <button
                   className="text-[#7ABDE4] font-medium px-3 py-1 rounded-2xl border-2 border-transparent transition-all duration-300
@@ -70,24 +72,16 @@ export default function Header() {
                     Himalayan Dialogue
                   </Link>
                   <Link
-                    href="/commentaries"
+                    href="/programs"
                     className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
              transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
                   >
-                    Commentaries
+                    Programs
                   </Link>
-                  <Link
-                    href="/himalayan_dialogue"
-                    className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
-             transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
-                  >
-                    India Diplomacy
-                  </Link>
-
-
-
                 </div>
               </div>
+              <Link href="/research" className="text-[#7ABDE4]  font-medium px-3 py-1 rounded transition-all duration-300 
+              hover:border-2 hover:rounded-2xl hover:text-[#7ABDE4] hover:border-[#4e56b5]">RESEARCH AREA</Link>
               <Link href="/contact" className="text-[#7ABDE4]  font-medium px-3 py-1 rounded transition-all duration-300 
               hover:border-2 hover:rounded-2xl hover:text-[#7ABDE4] hover:border-[#4e56b5]">CONTACT US</Link>
             </nav>

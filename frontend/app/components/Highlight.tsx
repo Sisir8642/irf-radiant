@@ -22,24 +22,7 @@ const sessions = [
     subtitle: "CHARTING AN INDEPENDENT COURSE",
     image: "/images/dummy.png"
   },
-  {
-    id: 4,
-    title: "A CONCLAVE ON NEPAL'S",
-    subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/images/dummy.png"
-  },
-  {
-    id: 5,
-    title: "A CONCLAVE ON NEPAL'S",
-    subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/images/dummy.png"
-  },
-  {
-    id: 6,
-    title: "A CONCLAVE ON NEPAL'S",
-    subtitle: "GEOPOLITICS, ECONOMY & DEVELOPMENT",
-    image: "/images/dummy.png"
-  }
+  
 ];
 
 export default function HimalayanDialogueSection() {
@@ -176,7 +159,7 @@ export default function HimalayanDialogueSection() {
 
         {/* Sessions Grid */}
         <div className="relative z-10 mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-8xl mx-auto">
             {sessions.map((session) => (
               <div
                 key={session.id}
@@ -192,7 +175,7 @@ export default function HimalayanDialogueSection() {
                   }}
                 >
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-100 overflow-hidden">
                     <img
                       src={session.image}
                       alt={session.title}

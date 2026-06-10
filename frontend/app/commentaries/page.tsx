@@ -37,56 +37,7 @@ const commentaries = [
       "For the wider international system, the US–Iran engagement reflects a pattern of \"managed instability,\" where conflict is contained but not fully resolved. Diplomacy proceeds, but under constant pressure from security concerns and strategic mistrust.",
     ],
   },
-  {
-    id: 3,
-    number: '03',
-    title: "Rubio in India: Strategic Adjustment in a Complex Partnership",
-    tag: "Foreign Policy",
-    excerpt:
-      "The visit of U.S. Secretary of State Marco Rubio to India highlights an important phase of adjustment in bilateral relations shaped by both strategic convergence and emerging friction.",
-    body: [
-      "The visit of U.S. Secretary of State Marco Rubio to India highlights an important phase of adjustment in bilateral relations shaped by both strategic convergence and emerging friction. While the partnership continues to be framed within a long-term strategic context, recent developments reveal areas of divergence, particularly in trade, tariffs, and regional policy priorities.",
-      "Discussions during the visit focused on economic cooperation, defense collaboration, energy security, and Indo-Pacific stability. However, the tone of engagement suggests an effort to stabilize and recalibrate rather than to announce major breakthroughs. The relationship increasingly reflects a balance between strategic necessity and transactional pragmatism.",
-      "A key feature of the current phase is the growing emphasis on issue-based cooperation rather than broad ideological alignment. Trade access, technology transfer, and defense procurement are becoming central drivers of engagement, while broader geopolitical alignment is managed with caution.",
-      "At the same time, India continues to pursue a multi-aligned foreign policy strategy, maintaining engagement with multiple global power centers. This creates both flexibility and complexity in its external relations, particularly in balancing partnerships across competing geopolitical frameworks.",
-      "For the United States, India remains a critical partner in broader Indo-Pacific calculations. However, policy inconsistencies in trade and regional engagement have introduced elements of uncertainty. For India, the challenge lies in preserving strategic autonomy while deepening selective cooperation with major powers.",
-      "For the broader international system, such recalibrations among major democracies influence regional stability and economic integration patterns. They also shape the strategic environment for middle and smaller states, which are affected by fluctuations in major-power coordination.",
-      "In essence, the visit reflects not a transformation of the partnership, but an effort to manage differences within an evolving and increasingly complex global order.",
-    ],
-  },
-  {
-    id: 4,
-    number: '04',
-    title: "India's Quad Diplomacy and the Logic of Strategic Convergence",
-    tag: "Indo-Pacific",
-    excerpt:
-      "The recent Quad Foreign Ministers' Meeting in New Delhi once again reflected the growing relevance of minilateral groupings in contemporary geopolitics, underscoring shared priorities in maritime security, critical minerals, and Indo-Pacific connectivity.",
-    body: [
-      "The recent Quad Foreign Ministers' Meeting in New Delhi once again reflected the growing relevance of minilateral groupings in contemporary geopolitics. Bringing together India, the United States, Japan, and Australia, the meeting underscored shared priorities in maritime security, critical minerals, resilient supply chains, energy cooperation, and Indo-Pacific connectivity.",
-      "Rather than functioning as a formal alliance, the Quad continues to evolve as a flexible platform for policy coordination. This design aligns well with India's broader foreign policy orientation, which seeks structured cooperation without rigid security commitments. In this sense, India's participation reflects a careful balance between deepening strategic engagement and preserving autonomy in decision-making.",
-      "Prime Minister Narendra Modi's leadership has been central to this approach. India has positioned the Quad not as an exclusive bloc, but as an open and issue-based mechanism that contributes to regional stability and public goods in the Indo-Pacific. This framing has allowed India to strengthen partnerships with advanced economies while maintaining engagement with other major power centers.",
-      "External Affairs Minister S. Jaishankar has consistently articulated this model of diplomacy as one grounded in realism and national interest, where partnerships are diversified rather than concentrated. His emphasis on issue-based cooperation has helped normalize India's simultaneous engagement with multiple strategic groupings, including BRICS and other Global South platforms.",
-      "The significance of the latest Quad engagement extends beyond security cooperation. Increasing focus on critical minerals, technology supply chains, clean energy, and infrastructure resilience reflects a broader shift in global geopolitics, where economic security is becoming inseparable from strategic stability. India's active role in shaping this agenda highlights its growing influence in defining the contours of Indo-Pacific cooperation.",
-      "As global polarization intensifies, India's approach through the Quad illustrates a broader diplomatic logic: engagement without exclusivity, cooperation without dependency, and alignment without alignment politics.",
-    ],
-  },
-  {
-    id: 5,
-    number: '05',
-    title: "BRICS Chairship and India's Effort to Shape a More Inclusive Global Order",
-    tag: "Global Governance",
-    excerpt:
-      "India's current role within BRICS comes at a time when debates over global governance reform and the voice of the Global South are gaining renewed attention, with New Delhi emphasizing resilience, sustainability, and institutional reform.",
-    body: [
-      "India's current role within BRICS comes at a time when debates over global governance reform and the voice of the Global South are gaining renewed attention. Under its chairship, New Delhi has sought to emphasize themes such as resilience, sustainability, development cooperation, and institutional reform.",
-      "The recent BRICS Foreign Ministers' Meeting, chaired by External Affairs Minister S. Jaishankar, reflected this direction. Discussions centered on strengthening economic cooperation, enhancing coordination among emerging economies, and advancing reforms in global institutions to make them more representative of contemporary power realities.",
-      "India's approach to BRICS is notable for its attempt to balance continuity with adaptation. While the grouping has expanded and diversified, New Delhi has consistently advocated a pragmatic agenda focused on development cooperation, financial stability, and technology collaboration rather than ideological alignment.",
-      "Prime Minister Narendra Modi's broader foreign policy framework situates BRICS alongside other major platforms such as the G20 and the Quad, reflecting India's multi-vector diplomacy. This approach allows India to engage both established and emerging power structures simultaneously, while maintaining policy flexibility.",
-      "External Affairs Minister S. Jaishankar has repeatedly highlighted that global governance must reflect present-day realities rather than post-war structures. India's emphasis on institutional reform therefore aligns with a wider demand from developing countries for a more balanced international system.",
-      "India's position within the Global South is strengthened by its ability to combine diplomatic advocacy with practical cooperation. Initiatives in digital public infrastructure, development partnerships, disaster response, and capacity building have contributed to India's image as a provider of scalable and adaptable development solutions.",
-      "In this evolving geopolitical environment, India's BRICS engagement reflects a broader diplomatic effort: to contribute to a more inclusive global order while maintaining constructive relations across different geopolitical groupings.",
-    ],
-  },
+
 ];
 
 const tagColors: Record<string, string> = {
@@ -138,109 +89,212 @@ export default function CommentariesPage() {
         <div className="max-w-7xl mx-auto px-6 space-y-4">
           {commentaries.map((item, index) => {
             const isOpen = openId === item.id;
+
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 32 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.08 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                }}
+                whileHover={!isOpen ? { y: -4 } : undefined}
+                className={`
+        relative overflow-hidden rounded-3xl
+        border transition-all duration-500
+        ${isOpen
+                    ? "border-[#2B698E]/30 shadow-[0_20px_60px_rgba(43,105,142,0.15)]"
+                    : "border-gray-200 hover:border-[#2B698E]/20 hover:shadow-xl"
+                  }
+      `}
               >
+                {/* LEFT ACCENT BAR */}
                 <div
-                  className={`rounded-2xl overflow-hidden transition-shadow duration-300 ${
-                    isOpen ? 'shadow-2xl' : 'shadow-md hover:shadow-xl'
-                  }`}
+                  className={`
+          absolute left-0 top-0 h-full w-1 transition-all duration-500
+          ${isOpen ? "bg-[#2B698E]" : "bg-transparent"}
+        `}
+                />
+
+                {/* HEADER */}
+                <button
+                  onClick={() => toggle(item.id)}
+                  className={`
+          w-full text-left px-8 py-8 flex gap-8
+          transition-all duration-300
+          ${isOpen
+                      ? "bg-[#1E2A3A] text-white"
+                      : "bg-white text-[#1E2A3A]"
+                    }
+        `}
                 >
-                  {/* ACCORDION HEADER */}
-                  <button
-                    onClick={() => toggle(item.id)}
-                    className={`w-full text-left px-8 py-7 flex items-start gap-6 transition-colors duration-300 ${
-                      isOpen
-                        ? 'bg-[#1E2A3A] text-white'
-                        : 'bg-white hover:bg-gray-50 text-[#1E2A3A]'
-                    }`}
-                  >
-                    {/* Number */}
+                  {/* WATERMARK NUMBER */}
+                  <div className="relative hidden md:block">
                     <span
-                      className={`text-4xl font-bold leading-none flex-shrink-0 mt-0.5 transition-colors duration-300 ${
-                        isOpen ? 'text-[#7ABDE4]' : 'text-[#2B698E]/20'
-                      }`}
+                      className={`
+              text-8xl font-black leading-none
+              transition-all duration-500
+              ${isOpen
+                          ? "text-white/10"
+                          : "text-[#1E2A3A]/5"
+                        }
+            `}
                     >
                       {item.number}
                     </span>
+                  </div>
 
-                    {/* Title block */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <span
-                          className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full ${
-                            isOpen
-                              ? 'bg-white/10 text-[#7ABDE4]'
-                              : tagColors[item.tag]
+                  {/* CONTENT */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <span
+                        className={`
+                inline-flex items-center
+                uppercase tracking-[0.2em]
+                text-[10px]
+                font-semibold
+                px-3 py-1
+                rounded-full
+                border
+                ${isOpen
+                            ? "border-white/10 bg-white/5 text-[#7ABDE4]"
+                            : "border-[#2B698E]/15 bg-[#2B698E]/5 text-[#2B698E]"
+                          }
+              `}
+                      >
+                        {item.tag}
+                      </span>
+
+                      <span
+                        className={`text-xs ${isOpen ? "text-gray-400" : "text-gray-500"
                           }`}
-                        >
-                          {item.tag}
-                        </span>
-                      </div>
-                      <h2 className="text-xl md:text-2xl font-bold leading-snug">
-                        {item.title}
-                      </h2>
-                      {!isOpen && (
-                        <p className="mt-2 text-gray-500 text-sm leading-relaxed line-clamp-2">
-                          {item.excerpt}
-                        </p>
-                      )}
+                      >
+                        Commentary
+                      </span>
+
+                      <span
+                        className={`w-1 h-1 rounded-full ${isOpen ? "bg-gray-500" : "bg-gray-400"
+                          }`}
+                      />
+
+                      <span
+                        className={`text-xs ${isOpen ? "text-gray-400" : "text-gray-500"
+                          }`}
+                      >
+                        5 min read
+                      </span>
                     </div>
 
-                    {/* Chevron */}
-                    <span
-                      className={`flex-shrink-0 mt-1 transition-transform duration-400 ${
-                        isOpen ? 'rotate-180 text-[#7ABDE4]' : 'text-[#2B698E]'
-                      }`}
-                    >
-                      <ChevronDown size={24} />
-                    </span>
-                  </button>
+                    <h2 className="text-2xl md:text-3xl font-bold leading-tight max-w-4xl">
+                      {item.title}
+                    </h2>
 
-                  {/* ACCORDION BODY */}
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="body"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="bg-[#1E2A3A] px-8 pt-2 pb-10 border-t border-white/10">
-                          <div className="max-w-4xl space-y-5">
+                    {!isOpen && (
+                      <p className="mt-4 text-gray-500 leading-relaxed max-w-3xl">
+                        {item.excerpt}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* CHEVRON */}
+                  <div
+                    className={`
+            shrink-0 mt-1 transition-all duration-500
+            ${isOpen ? "rotate-180 text-[#7ABDE4]" : "text-[#2B698E]"}
+          `}
+                  >
+                    <ChevronDown size={24} />
+                  </div>
+                </button>
+
+                {/* BODY */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      exit={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.45,
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <div className="bg-gradient-to-b from-[#1E2A3A] to-[#243648] px-8 py-12 border-t border-white/10">
+                        <div className="max-w-3xl mx-auto">
+                          {/* SECTION LABEL */}
+                          <div className="flex items-center gap-4 mb-10">
+                            <div className="h-px flex-1 bg-white/10" />
+
+                            <span className="uppercase tracking-[0.35em] text-xs text-[#7ABDE4] font-medium">
+                              Analysis
+                            </span>
+
+                            <div className="h-px flex-1 bg-white/10" />
+                          </div>
+
+                          {/* CONTENT */}
+                          <div className="space-y-7">
                             {item.body.map((para, i) => (
                               <motion.p
                                 key={i}
-                                initial={{ opacity: 0, y: 12 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.35, delay: i * 0.05 }}
-                                className="text-gray-300 leading-relaxed text-[0.97rem]"
+                                initial={{
+                                  opacity: 0,
+                                  y: 10,
+                                }}
+                                animate={{
+                                  opacity: 1,
+                                  y: 0,
+                                }}
+                                transition={{
+                                  duration: 0.35,
+                                  delay: i * 0.05,
+                                }}
+                                className="
+                        text-gray-200
+                        text-[1.05rem]
+                        leading-8
+                        tracking-[0.01em]
+                      "
                               >
                                 {para}
                               </motion.p>
                             ))}
                           </div>
 
-                          {/* Close hint */}
-                          <button
-                            onClick={() => toggle(item.id)}
-                            className="mt-8 text-sm text-[#7ABDE4] hover:text-white flex items-center gap-1.5 transition-colors"
-                          >
-                            <ChevronDown size={16} className="rotate-180" />
-                            Collapse
-                          </button>
+                          {/* FOOTER */}
+                          <div className="mt-12 pt-6 border-t border-white/10">
+                            <button
+                              onClick={() => toggle(item.id)}
+                              className="
+                      inline-flex items-center gap-2
+                      text-[#7ABDE4]
+                      hover:text-white
+                      transition-colors
+                      text-sm
+                      uppercase
+                      tracking-wider
+                    "
+                            >
+                              <ChevronDown
+                                size={16}
+                                className="rotate-180"
+                              />
+                              Collapse Analysis
+                            </button>
+                          </div>
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             );
           })}

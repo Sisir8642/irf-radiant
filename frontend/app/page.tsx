@@ -10,9 +10,33 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
+import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 
+const commentaries = [
+  {
+    id: 1,
+    title: 'Trump–Putin–Xi Triangle: Power Rebalancing and Global Fluidity',
+    content:
+      'The recent diplomatic engagements involving U.S. President Donald Trump, Vladimir Putin, and Chinese leadership reflect a broader reconfiguration in global power relations. The current international system is increasingly characterized by strategic flexibility, competitive coexistence, and negotiated influence.',
+  },
+  {
+    id: 2,
+    title: 'US–Iran Talks: Coercive Diplomacy and Fragile Engagement',
+    content:
+      'Recent diplomatic engagement between the United States and Iran remains fragile, constrained by mutual distrust, regional security concerns, and intermittent escalation. Diplomacy continues alongside strategic pressure and deterrence.',
+  },
+  {
+    id: 3,
+    title: 'Rubio in India: Strategic Adjustment in a Complex Partnership',
+    content:
+      'Marco Rubio’s visit to India highlights an evolving relationship shaped by strategic convergence, trade concerns, and Indo-Pacific cooperation. The partnership continues to balance shared interests with strategic autonomy.',
+  },
+];
 
 export default function Home() {
+   const [openId, setOpenId] = useState<number | null>(null);
+
   return (
     <>
       <header
@@ -95,51 +119,59 @@ export default function Home() {
         <Focus />
       </section>
 
-      <section>
-        <div className="bg-gray-50 grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-6 p-6">
+       <section className="bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 px-6">
 
-          {/* LEFT CARD */}
-          <Card className="bg-gray-100">
-            <CardContent className="h-full">
-              <h1 className="text-3xl mt-20 pl-20"> Recent News </h1>
-              <br />
-              <p className="text-xl ml-20">
-                Stay updated with our latest research highlights, policy briefs,
-                <br />
-                and strateegic dialogues
-              </p>
-              <Button className="bg-blue-600 rounded hover:bg-blue-700 ml-20 mt-15">
-                READ ALL NEWS
-              </Button>
-            </CardContent>
-          </Card>
+        {/* LEFT SIDE */}
+        <Card className="bg-[#2B698E] border-0">
+          <CardContent className="p-10 flex flex-col justify-center h-full">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Commentaries
+            </h2>
 
-          {/* RIGHT CARD */}
-          <Card className="bg-linear-to-r from-[#2B698E] to-[#7ABDE4]">
-            <CardContent className="h-full pl-2">
-              <Link href="/himalayan">
-                <h1 className="mt-20 text-4xl text-gray-700">
-                  IRF Hosts First Himalayan Dialogue
-                </h1>
-                <br />
-                <p className="text-xl">
-                  The Innovative Research Foundation successfully hosted the inaugural
-                  Himalayan Dialogue on April 7, 2025, in Kathmandu. The high level
-                  event gathered over 200 participants including diplomats, policy
-                  experts, academics, and business leaders from Nepal and around the world.
-                </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              IRF's policy commentaries provide timely analysis on major
+              geopolitical developments, diplomatic engagements, and emerging
+              strategic trends shaping regional and global affairs.
+            </p>
+          </CardContent>
+        </Card>
 
-                <div className="flex justify-end mt-10 mr-4">
-                  <Button className="flex items-center gap-2 bg-blue-600 rounded hover:bg-blue-700">
-                    READ MORE <ArrowRight size={20} />
-                  </Button>
+        {/* RIGHT SIDE */}
+        <div className="space-y-4">
+          {commentaries.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-xl shadow-sm border"
+            >
+              <button
+                onClick={() =>
+                  setOpenId(openId === item.id ? null : item.id)
+                }
+                className="w-full flex justify-between items-center p-6 text-left"
+              >
+                <h3 className="font-semibold text-lg text-gray-800">
+                  {item.title}
+                </h3>
+
+                <ChevronDown
+                  className={`transition-transform duration-300 ${
+                    openId === item.id ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              {openId === item.id && (
+                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {item.content}
                 </div>
-              </Link>
-            </CardContent>
-          </Card>
-
+              )}
+            </div>
+          ))}
         </div>
-      </section>
+
+      </div>
+    </section>
 
 
     </>

@@ -18,6 +18,11 @@ const buttomVariant = {
   visible: { opacity: 1, y: 0 },
 };
 
+const fadeUpVariant = {
+  hidden: { opacity: 0, y:80 },
+  visible: { opacity: 1, y: 0 },
+}
+
 const page = () => {
 
   return (
@@ -107,7 +112,7 @@ const page = () => {
 
         {/* INTRO DESCRIPTION */}
         <motion.div
-          variants={bottomVariant}
+          variants={buttomVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -414,7 +419,7 @@ const page = () => {
 
           {/* 2025 summary card */}
           <motion.div
-            variants={bottomVariant}
+            variants={buttomVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

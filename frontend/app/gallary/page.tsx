@@ -1,0 +1,142 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const images = [
+  "/images/products/p1.png",
+  "/images/belts/f3.png",
+  "/images/b4.png",
+  "/images/bg2.png",
+  "/images/gallery/g1.JPG",
+  "/images/gallery/g2.JPG",
+  "/images/gallery/g3.JPG",
+  "/images/gallery/g5.JPG",
+  "/images/gallery/g6.JPG",
+  "/images/gallery/g8.JPG",
+  "/images/gallery/g10.jpg",
+  "/images/gallery/g11.jpg",
+  "/images/gallery/g14.jpeg",
+  "/images/gallery/g15.jpeg",
+];
+
+export default function Page() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openImage = (index: number) => setSelectedIndex(index);
+  const closeImage = () => setSelectedIndex(null);
+
+  const prevImage = () => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) =>
+      prev === 0 ? images.length - 1 : (prev ?? 0) - 1
+    );
+  };
+
+  const nextImage = () => {
+    if (selectedIndex === null) return;
+    setSelectedIndex((prev) =>
+      prev === images.length - 1 ? 0 : (prev ?? 0) + 1
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 lg:px-10 py-8 sm:py-10 lg:py-12">
+
+      {/* HEADER */}
+      <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
+          Top Dog Gallery
+        </h1>
+        <p className="text-gray-500 mt-3 text-sm sm:text-base md:text-lg max-w-xl mx-auto">
+          A glimpse into our craftsmanship, premium products, and lifestyle moments.
+        </p>
+      </div>
+
+      {/* MASONRY GRID */}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 sm:gap-5 space-y-4 sm:space-y-5">
+
+        {images.map((img, i) => (
+          <div
+            key={i}
+            onClick={() => openImage(i)}
+            className="mb-4 sm:mb-5 break-inside-avoid cursor-pointer group"
+          >
+            <div className="relative overflow-hidden rounded-xl sm:rounded-[22px] shadow-md bg-white">
+
+              <Image
+                src={img}
+                alt={`gallery-${i}`}
+                width={600}
+                height={600}
+                className={`
+                  w-full object-cover transition-transform duration-500
+                  group-hover:scale-105 sm:group-hover:scale-110
+                  h-auto
+                `}
+              />
+
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300" />
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* LIGHTBOX */}
+      {selectedIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-4"
+          onClick={closeImage}
+        >
+
+          {/* Close */}
+          <button
+            onClick={closeImage}
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Prev */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-2 sm:left-4 md:left-10 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+          >
+            <ChevronLeft size={28} className="sm:w-9 sm:h-9" />
+          </button>
+
+          {/* Image */}
+          <div
+            className="relative w-full max-w-5xl h-[70vh] sm:h-[75vh] md:h-[80vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[selectedIndex]}
+              alt="preview"
+              fill
+              className="object-contain rounded-lg sm:rounded-xl"
+            />
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-2 sm:right-4 md:right-10 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+          >
+            <ChevronRight size={28} className="sm:w-9 sm:h-9" />
+          </button>
+
+        </div>
+      )}
+    </div>
+  );
+}
