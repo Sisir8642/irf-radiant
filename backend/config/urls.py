@@ -24,9 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('api/',include('contact.urls')),
-    
+    path('api/',include('homesection.urls')),
+    path('api/',include('about_us.urls')),
+    path('api/',include('commentaries.urls')),
+
+    # ========================= swagger ======================================
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

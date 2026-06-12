@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'corsheaders',
     'homesection',
+    'about_us',
+    'commentaries',
     'contact',
 
 ]
