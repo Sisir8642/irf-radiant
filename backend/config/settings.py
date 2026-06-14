@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'homesection',
     'about_us',
     'commentaries',
+    'event',
     'contact',
 
 ]
