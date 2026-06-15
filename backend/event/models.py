@@ -61,13 +61,3 @@ class OtherSite(models.Model):
     def __str__(self):
         return self.site1
 
-
-class CurrentProgram(models.Model):
-    image=models.ImageField(upload_to='programimage/')
-    program_types=models.CharField(max_length=250)
-    title=models.CharField(max_length=250)
-    description=models.CharField()
-
-    def __str__(self):
-        return self.title
-
