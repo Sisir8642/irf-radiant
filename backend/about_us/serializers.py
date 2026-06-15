@@ -7,7 +7,7 @@ class CompanyMissionSeralizer(serializers.ModelSerializer):
         model=CompanyMission
         fields='__all__'
 
-class RecentAchievementserializer(serializers.ModelSerializer):
+class RecentAchievementSerializer(serializers.ModelSerializer):
     class Meta:
         model=RecentAchievement
         fields='__all__'

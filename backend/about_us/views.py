@@ -17,9 +17,9 @@ class CompanyMissionViewSet(ModelViewSet):
 
 @extend_schema(
         tags=["Achievements "],
-        request=RecentAchievementserializer
+        request=RecentAchievementSerializer
 )
 class ReacentAchievementViewSet(ModelViewSet):
     queryset=RecentAchievement.objects.all()
-    serializer_class=RecentAchievementserializer
+    serializer_class=RecentAchievementSerializer
 

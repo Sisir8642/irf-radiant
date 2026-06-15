@@ -1,8 +1,6 @@
 from django.db import models
 
-# Create your models here.
-
-
+# Create your models here. 
 class Dialogue(models.Model):
     image=models.ImageField(upload_to='dialogue_image/')
     date=models.DateField(null=True,blank=True)
@@ -15,3 +13,61 @@ class Dialogue(models.Model):
 
     def __str__(self):
         return self.title
+    
+class ProgramSchedule(models.Model):
+
+    start_time = models.CharField(max_length=50)
+    end_time = models.CharField(max_length=50)
+
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+
+    moderator = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Session(models.Model):
+   
+    session_no = models.PositiveIntegerField()
+
+    title = models.CharField(max_length=255)
+
+    start_time = models.CharField(max_length=50)
+    end_time = models.CharField(max_length=50)
+
+    description = models.TextField()
+    Panelists=models.TextField()
+    moderator = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ["session_no"]
+
+    def __str__(self):
+        return self.title
+
+class Video(models.Model):
+     youtube_url = models.URLField()
+
+     def __str__(self):
+         return "video "
+
+
+class OtherSite(models.Model):
+    site1=models.URLField()
+    
+
+    def __str__(self):
+        return self.site1
+
+
+class CurrentProgram(models.Model):
+    image=models.ImageField(upload_to='programimage/')
+    program_types=models.CharField(max_length=250)
+    title=models.CharField(max_length=250)
+    description=models.CharField()
+
+    def __str__(self):
+        return self.title
+
