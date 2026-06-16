@@ -47,11 +47,9 @@ export default function Page() {
       {/* HEADER */}
       <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-2">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
-          Top Dog Gallery
+          IRF Gallery
         </h1>
-        <p className="text-gray-500 mt-3 text-sm sm:text-base md:text-lg max-w-xl mx-auto">
-          A glimpse into our craftsmanship, premium products, and lifestyle moments.
-        </p>
+        
       </div>
 
       {/* MASONRY GRID */}

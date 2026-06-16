@@ -30,6 +30,14 @@ const page = () => {
       {/* HEADER SECTION */}
       <section className='relative bg-[#1E2A3A] py-24'>
         <div className='max-w-7xl mx-auto px-6'>
+          <motion.p
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="font-mono text-xs uppercase tracking-[0.2em] text-[#7ABDE4]"
+                    >
+                      Home / Events / Himalayan Dialogue
+                    </motion.p>
           <h1 className='text-white text-5xl md:text-6xl font-bold mb-6'>
             HIMALAYAN DIALOGUE
           </h1>

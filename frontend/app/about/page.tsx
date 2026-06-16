@@ -1,5 +1,6 @@
 'use client';
 
+
 import React from 'react';
 import { motion } from "framer-motion";
 import {
@@ -26,10 +27,19 @@ const fadeUpVariant = {
 export default function Page() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-[#2B698E] to-[#7ABDE4]">
+         
 
             {/* HEADER SECTION */}
             <section className="relative bg-[#1E2A3A] py-24">
                 <div className="max-w-7xl mx-auto px-6">
+                       <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-mono text-xs uppercase tracking-[0.2em] text-[#7ABDE4]"
+          >
+            Home / About
+          </motion.p>
                     <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">
                         About Us
                     </h1>

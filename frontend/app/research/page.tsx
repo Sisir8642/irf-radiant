@@ -14,36 +14,90 @@ import {
   BookOpen,
   Newspaper,
   Layers,
+  Globe,
+  MapPinned,
+  Landmark,
+  Building2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+const data = [
+    {
+      id: "global-powers",
+      title: "Global Powers",
+      pdfs: [
+        { name: "US Foreign Policy Overview", url: "/pdfs/us-policy.pdf" },
+        { name: "China Strategic Influence", url: "/pdfs/china-strategy.pdf" },
+        { name: "EU Governance Structure", url: "/pdfs/eu-governance.pdf" },
+      ],
+    },]
+
+
+const GEOGRAPHIC_AREAS = [
+  {
+    id: "south-asia",
+    label: "South Asia",
+    description: "Regional integration, diplomacy, and development dynamics",
+    icon: Globe,
+  },
+  {
+    id: "india",
+    label: "India",
+    description: "Foreign policy, economy, and strategic affairs",
+    icon: Landmark,
+  },
+  {
+    id: "china",
+    label: "China",
+    description: "Geopolitics, trade, technology, and regional influence",
+    icon: MapPinned,
+  },
+  {
+    id: "asean-and-southeast-asia",
+    label: "ASEAN and Southeast Asia",
+    description: "Connectivity, economic cooperation, and maritime affairs",
+    icon: Building2,
+  },
+  {
+    id: "europe",
+    label: "Europe",
+    description: "Policy developments, diplomacy, and global partnerships",
+    icon: Globe,
+  },
+];
 
 const THEMES = [
   {
-    id: "geopolitics",
-    label: "Geopolitics",
+    id: "foreign-policy-and-diplomacy",
+    label: "Foreign Policy and Diplomacy",
     description: "Border dynamics, regional alliances & strategic affairs",
     icon: Compass,
   },
   {
-    id: "geo-economics",
-    label: "Geo-Economics",
+    id: "geopolitics-and-strategic-affairs",
+    label: "Geopolitics and Strategic Affairs",
     description: "Trade corridors, connectivity & cross-border investment",
     icon: TrendingUp,
   },
   {
-    id: "climate",
-    label: "Climate",
+    id: "economic-diplomacy-and-development-cooperation",
+    label: "Economic Diplomacy and Development Cooperation",
     description: "Glacial systems, water security & climate resilience",
     icon: Leaf,
   },
   {
-    id: "tourism",
-    label: "Tourism",
+    id: "climate-and-environmental-diplomacy",
+    label: "Climate and Environmental Diplomacy",
     description: "Sustainable travel, heritage & local livelihoods",
     icon: Mountain,
+  },
+   {
+    id: "technology,AI-and-data-diplomacy",
+    label: "Technology, AI and Data Diplomacy",
+    description: "Trade corridors, connectivity & cross-border investment",
+    icon: TrendingUp,
   },
 ] as const;
 
@@ -137,7 +191,7 @@ function RidgelineDivider() {
       >
         <motion.path
           d="M0,160 L0,90 L120,55 L260,100 L400,40 L520,85 L660,20 L800,75 L940,45 L1080,95 L1220,35 L1360,80 L1440,55 L1440,160 Z"
-          fill="#1C2B33"
+          fill="#2B698E"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 0.06, y: 0 }}
           viewport={{ once: true }}
@@ -145,7 +199,7 @@ function RidgelineDivider() {
         />
         <motion.path
           d="M0,160 L0,120 L150,80 L300,130 L450,70 L600,115 L760,55 L920,110 L1080,75 L1240,125 L1440,90 L1440,160 Z"
-          fill="#C9622D"
+          fill="#7ABDE4"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 0.1, y: 0 }}
           viewport={{ once: true }}
@@ -180,17 +234,17 @@ export default function ResearchPage() {
   const featured = PUBLICATIONS[0];
 
   return (
-    <main className="min-h-screen bg-[#F7F4EC] text-[#1C2B33]">
+    <main className="min-h-screen  text-[#1C2B33]">
       {/* ------------------------------------------------------------------ */}
       {/* Page header */}
       {/* ------------------------------------------------------------------ */}
-      <section className="border-b border-[#1C2B33]/10 bg-[#EFEAE0]">
+      <section className="border-b bg-[#1E2A3A] text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9622D]"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-[#7ABDE4]"
           >
             Home / Research
           </motion.p>
@@ -208,7 +262,7 @@ export default function ResearchPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 max-w-xl text-base text-[#1C2B33]/70 sm:text-lg"
+            className="mt-5 max-w-xl text-base text-[#7ABDE4] sm:text-lg"
           >
             Independent analysis on the forces shaping the Himalayan region —
             from border politics and trade corridors to glacial change and
@@ -224,12 +278,12 @@ export default function ResearchPage() {
             {STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="border-l-2 border-[#C9622D] pl-4"
+                className="border-l-2 border-[#7ABDE4] pl-4"
               >
                 <p className="font-serif text-3xl font-semibold sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-sm text-[#1C2B33]/60">{stat.label}</p>
+                <p className="mt-1 text-sm text-[#7ABDE4]">{stat.label}</p>
               </div>
             ))}
           </motion.div>
@@ -241,22 +295,22 @@ export default function ResearchPage() {
       {/* ------------------------------------------------------------------ */}
       {/* Research themes */}
       {/* ------------------------------------------------------------------ */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-gradient-to-br from-[#2B698E] to-[#7ABDE4]">
         <div className="mb-10 flex items-end justify-between gap-4">
-          <h2 className="font-serif text-2xl font-semibold sm:text-3xl">
-            Research themes
+          <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-white">
+           Thematic Research Areas
           </h2>
           {activeTheme !== "all" && (
             <button
               onClick={() => setActiveTheme("all")}
-              className="font-mono text-xs uppercase tracking-wider text-[#C9622D] underline-offset-4 hover:underline"
+              className="font-mono text-xs uppercase tracking-wider text-[#4D8CB2] underline-offset-4 hover:underline"
             >
               Clear filter
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {THEMES.map((theme, i) => {
             const Icon = theme.icon;
             const isActive = activeTheme === theme.id;
@@ -273,15 +327,15 @@ export default function ResearchPage() {
                 }
                 className={`group flex flex-col items-start rounded-xl border p-6 text-left transition-colors ${
                   isActive
-                    ? "border-[#C9622D] bg-[#C9622D]/10"
-                    : "border-[#1C2B33]/10 bg-white hover:border-[#C9622D]/40"
+                    ? "border-[#4D8CB2] bg-[#C9622D]/10"
+                    : "border-[#1C2B33]/10 bg-white hover:border-[#4D8CB2]/40"
                 }`}
               >
                 <span
                   className={`mb-4 flex h-11 w-11 items-center justify-center rounded-lg ${
                     isActive
-                      ? "bg-[#C9622D] text-white"
-                      : "bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#C9622D]/15 group-hover:text-[#C9622D]"
+                      ? "bg-[#4D8CB2] text-white"
+                      : "bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2]"
                   } transition-colors`}
                 >
                   <Icon className="h-5 w-5" />
@@ -292,7 +346,7 @@ export default function ResearchPage() {
                 <p className="mt-2 text-sm text-[#1C2B33]/60">
                   {theme.description}
                 </p>
-                <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#C9622D]">
+                <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#4D8CB2]">
                   {isActive ? "Filtering active" : "Filter by theme"}
                 </span>
               </motion.button>
@@ -301,12 +355,50 @@ export default function ResearchPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-[#FEFFFF]">
+  <div className="mb-10">
+    <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-[#1C2B33]">
+      Geographic Research Areas
+    </h2>
+  </div>
+
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    {GEOGRAPHIC_AREAS.map((area, i) => {
+      const Icon = area.icon;
+
+      return (
+        <motion.div
+          key={area.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.08 }}
+          whileHover={{ y: -4 }}
+          className="group flex flex-col items-start rounded-xl border border-[#1C2B33]/10 bg-white p-6 hover:border-[#4D8CB2]/40 transition-colors"
+        >
+          <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2] transition-colors">
+            <Icon className="h-5 w-5" />
+          </span>
+
+          <h3 className="font-serif text-lg font-semibold">
+            {area.label}
+          </h3>
+
+          <p className="mt-2 text-sm text-[#1C2B33]/60">
+            {area.description}
+          </p>
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
+
       {/* ------------------------------------------------------------------ */}
       {/* Featured research */}
       {/* ------------------------------------------------------------------ */}
-      <section className="mx-auto max-w-6xl px-6 pb-16 sm:pb-20">
-        <h2 className="mb-10 font-serif text-2xl font-semibold sm:text-3xl">
-          Featured research
+      <section className="mx-auto max-w-full px-50 pb-16 sm:pb-20 pt-10 bg-[#0F172A]">
+        <h2 className="mb-10 font-serif text-2xl font-semibold sm:text-3xl text-white">
+         Research Article
         </h2>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -335,13 +427,13 @@ export default function ResearchPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col"
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9622D]">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#4D8CB2]">
               Geopolitics · {featured.date}
             </span>
-            <h3 className="mt-3 font-serif text-2xl font-semibold sm:text-3xl">
+            <h3 className="mt-3 font-serif text-2xl font-semibold sm:text-3xl text-white">
               {featured.title}
             </h3>
-            <p className="mt-4 max-w-md text-[#1C2B33]/70">
+            <p className="mt-4 max-w-md text-[#4D8CB2]">
               {featured.excerpt} Drawing on field interviews and satellite
               survey data, the report maps how recent diplomatic exchanges
               have shifted the security posture of three border districts.
@@ -354,7 +446,7 @@ export default function ResearchPage() {
               </Button>
               <Button
                 variant="outline"
-                className="gap-2 rounded-full border-[#1C2B33]/20 text-[#1C2B33] hover:bg-[#1C2B33]/5"
+                className="gap-2 rounded-full border-[#1C2B33]/20 text-black hover:bg-white"
               >
                 Read summary
                 <ArrowUpRight className="h-4 w-4" />
@@ -363,11 +455,57 @@ export default function ResearchPage() {
           </motion.div>
         </div>
       </section>
+      <section className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1E2A3A]">
+            Global Powers & Emerging Regions Studies
+          </h2>
+          <p className="text-gray-600 mt-4">
+            Click a category to view PDFs
+          </p>
+        </div>
+
+        {/* ACCORDION LIST */}
+        <div className="space-y-6">
+          {data.map((cat) => (
+            <details
+              key={cat.id}
+              className="bg-white rounded-2xl shadow-sm p-6 group"
+            >
+              <summary className="cursor-pointer text-xl font-semibold text-[#1E2A3A] flex justify-between items-center">
+                {cat.title}
+                <span className="text-sm text-gray-500 group-open:rotate-180 transition">
+                  ▼
+                </span>
+              </summary>
+
+              <div className="mt-6 grid md:grid-cols-2 gap-4">
+                {cat.pdfs.map((pdf, i) => (
+                  <a
+                    key={i}
+                    href={pdf.url}
+                    target="_blank"
+                    className="p-4 border rounded-xl hover:bg-gray-50 flex justify-between"
+                  >
+                    <span>{pdf.name}</span>
+                    <span className="text-[#2B698E] text-sm">Open →</span>
+                  </a>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+
+      </div>
+    </section>
 
       {/* ------------------------------------------------------------------ */}
       {/* All publications */}
       {/* ------------------------------------------------------------------ */}
-      <section className="mx-auto max-w-6xl px-6 pb-16 sm:pb-20">
+      <section className="mx-auto max-w-6xl px-6 pb-16 sm:pb-20 mt-20">
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-serif text-2xl font-semibold sm:text-3xl">
             All publications
@@ -401,7 +539,7 @@ export default function ResearchPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search publications…"
-                className="w-56 rounded-full border-[#1C2B33]/15 bg-white pl-9 focus-visible:ring-[#C9622D]"
+                className="w-56 rounded-full border-[#1C2B33]/15 bg-white pl-9 focus-visible:ring-[#4D8CB2]"
               />
             </div>
           </div>
@@ -436,7 +574,7 @@ export default function ResearchPage() {
                       </Badge>
                       <Badge
                         variant="secondary"
-                        className="rounded-full bg-[#C9622D]/10 font-mono text-[10px] uppercase tracking-wider text-[#C9622D]"
+                        className="rounded-full bg-[#C9622D]/10 font-mono text-[10px] uppercase tracking-wider text-[#4D8CB2]"
                       >
                         {theme?.label}
                       </Badge>
@@ -499,9 +637,9 @@ export default function ResearchPage() {
       {/* ------------------------------------------------------------------ */}
       {/* Books shelf */}
       {/* ------------------------------------------------------------------ */}
-      <section className="bg-[#EFEAE0] py-16 sm:py-20">
+      <section className="bg-gradient-to-br from-[#2B698E] to-[#7ABDE4] py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-10 font-serif text-2xl font-semibold sm:text-3xl">
+          <h2 className="mb-10 font-serif text-2xl font-semibold sm:text-3xl text-white">
             From the IRF library
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -536,12 +674,12 @@ export default function ResearchPage() {
             <h2 className="max-w-md font-serif text-2xl font-semibold sm:text-3xl">
               Have data or a story from the region worth investigating?
             </h2>
-            <p className="mt-2 max-w-md text-white/60">
+            <p className="mt-2 max-w-md text-[#4D8CB2]">
               We collaborate with researchers, journalists, and policy
               practitioners across the Himalayan belt.
             </p>
           </div>
-          <Button className="rounded-full bg-[#C9622D] px-8 text-white hover:bg-[#C9622D]/90">
+          <Button className="rounded-full bg-[#4D8CB2] px-8 text-white hover:bg-[#4D8CB2]/90">
             Work with us
           </Button>
         </div>
