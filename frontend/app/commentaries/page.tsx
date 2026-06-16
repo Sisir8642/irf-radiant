@@ -59,6 +59,14 @@ export default function CommentariesPage() {
       {/* HEADER */}
       <section className="relative bg-[#1E2A3A] py-24">
         <div className="max-w-7xl mx-auto px-6">
+          <motion.p
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="font-mono text-xs uppercase tracking-[0.2em] text-[#7ABDE4] mb-20"
+                    >
+                      Home / Commentaries
+                    </motion.p>
           <p className="text-[#7ABDE4] text-sm uppercase tracking-widest font-medium mb-3">
             Innovate Research Foundation
           </p>
