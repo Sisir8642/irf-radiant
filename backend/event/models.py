@@ -61,3 +61,24 @@ class OtherSite(models.Model):
     def __str__(self):
         return self.site1
 
+
+
+
+class Program(models.Model):
+    STATUS_CHOICES = (
+        ("current", "Current"),
+        ("upcoming", "Upcoming"),
+    )
+
+    title = models.CharField(max_length=255)
+    category = models.CharField(max_length=100, blank=True)
+    image = models.ImageField(upload_to="programs/",blank=True,null=True)
+    description = models.TextField(blank=True)
+    objective = models.TextField(blank=True)
+    participants = models.TextField(blank=True)
+    expected_outcome = models.TextField(blank=True)
+    date = models.CharField(max_length=100,blank=True,)
+    status = models.CharField(choices=STATUS_CHOICES,default="upcoming")
+
+    def __str__(self):
+        return self.title

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import *
+from .models import *
 
 class DialogueSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,12 +10,12 @@ class DialogueSerializer(serializers.ModelSerializer):
 class ProgramScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model=ProgramSchedule
-        fileds="__all__"
+        fields="__all__"
 
 class SessionSerializer(serializers.ModelSerializer):
     class Meta:
         model=Session
-        fileds="__all__"
+        fields="__all__"
 
 
 class VideoSerializer(serializers.ModelSerializer):
@@ -29,3 +29,7 @@ class OtherSiteSerializer(serializers.ModelSerializer):
         model=OtherSite
         fields="__all__"
 
+class ProgramSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Program
+        fields="__all__"

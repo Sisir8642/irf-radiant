@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from rest_framework.response import Response
 from .serializers import *
 from rest_framework.viewsets import ModelViewSet
 from drf_spectacular.utils import extend_schema
@@ -11,8 +12,13 @@ from drf_spectacular.utils import extend_schema
         request=CompanyMissionSeralizer
 )
 class CompanyMissionViewSet(ModelViewSet):
-    queryset=CompanyMission.objects.first()
-    serializer_class=CompanyMissionSeralizer
+    queryset = CompanyMission.objects.all()
+    serializer_class = CompanyMissionSeralizer
+
+    def list(self, request, *args, **kwargs):
+        obj = CompanyMission.objects.first()
+        serializer = self.get_serializer(obj)
+        return Response(serializer.data)
 
 
 @extend_schema(
