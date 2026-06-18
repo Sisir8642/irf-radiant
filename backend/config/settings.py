@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'commentaries',
     'event',
     'contact',
+    'research_area'
 
 ]
 
@@ -119,13 +120,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu'
+USE_TZ = True
 
 USE_I18N = True
 
 USE_TZ = True
 
-
+ 
 # ======= media ==========
 MEDIA_ROOT=BASE_DIR/'media/'
 MEDIA_URL='/media/'
