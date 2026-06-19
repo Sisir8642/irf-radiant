@@ -1,28 +1,67 @@
+
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const images = [
-  "/images/products/p1.png",
-  "/images/belts/f3.png",
-  "/images/b4.png",
-  "/images/bg2.png",
-  "/images/gallery/g1.JPG",
-  "/images/gallery/g2.JPG",
-  "/images/gallery/g3.JPG",
-  "/images/gallery/g5.JPG",
-  "/images/gallery/g6.JPG",
-  "/images/gallery/g8.JPG",
-  "/images/gallery/g10.jpg",
-  "/images/gallery/g11.jpg",
-  "/images/gallery/g14.jpeg",
-  "/images/gallery/g15.jpeg",
-];
-
 export default function Page() {
+  const [images, setImages] = useState<string[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+        if (!baseUrl) {
+          console.error('❌ Missing NEXT_PUBLIC_BASE_URL');
+          setLoading(false);
+          return;
+        }
+
+        const res = await fetch(`${baseUrl}/api/gallery`);
+
+        if (!res.ok) {
+          console.error('❌ API error:', res.status);
+          setLoading(false);
+          return;
+        }
+
+        const contentType = res.headers.get('content-type');
+
+        // ❌ If backend returns HTML (your current issue)
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await res.text();
+          console.error('❌ Expected JSON but got:', text);
+          setLoading(false);
+          return;
+        }
+
+        const data = await res.json();
+
+        // ✅ Handle different backend shapes safely
+        let imgArray: string[] = [];
+
+        if (Array.isArray(data)) {
+          imgArray = data.map((item: any) => item.image);
+        } else if (Array.isArray(data?.data)) {
+          imgArray = data.data.map((item: any) => item.image);
+        } else if (Array.isArray(data?.images)) {
+          imgArray = data.images;
+        }
+
+        setImages(imgArray);
+      } catch (err) {
+        console.error('❌ Fetch failed:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const openImage = (index: number) => setSelectedIndex(index);
   const closeImage = () => setSelectedIndex(null);
@@ -42,42 +81,44 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 lg:px-10 py-8 sm:py-10 lg:py-12">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 py-10">
 
       {/* HEADER */}
-      <div className="text-center mb-10 sm:mb-12 lg:mb-16 px-2">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight">
-          IRF Gallery
-        </h1>
-        
-      </div>
+      <h1 className="text-center text-4xl font-bold mb-10">
+        IRF Gallery
+      </h1>
 
-      {/* MASONRY GRID */}
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 sm:gap-5 space-y-4 sm:space-y-5">
+      {/* LOADING STATE */}
+      {loading && (
+        <p className="text-center text-gray-500">
+          Loading images...
+        </p>
+      )}
 
+      {/* EMPTY STATE */}
+      {!loading && images.length === 0 && (
+        <p className="text-center text-red-500">
+          No images found or API error.
+        </p>
+      )}
+
+      {/* GRID */}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
         {images.map((img, i) => (
           <div
             key={i}
             onClick={() => openImage(i)}
-            className="mb-4 sm:mb-5 break-inside-avoid cursor-pointer group"
+            className="mb-5 break-inside-avoid cursor-pointer"
           >
-            <div className="relative overflow-hidden rounded-xl sm:rounded-[22px] shadow-md bg-white">
-
+            <div className="relative overflow-hidden rounded-xl shadow-md">
               <Image
                 src={img}
                 alt={`gallery-${i}`}
                 width={600}
                 height={600}
-                className={`
-                  w-full object-cover transition-transform duration-500
-                  group-hover:scale-105 sm:group-hover:scale-110
-                  h-auto
-                `}
+                className="w-full object-cover"
+                unoptimized
               />
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300" />
-
             </div>
           </div>
         ))}
@@ -86,16 +127,15 @@ export default function Page() {
       {/* LIGHTBOX */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-4"
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
           onClick={closeImage}
         >
-
           {/* Close */}
           <button
             onClick={closeImage}
-            className="absolute top-4 sm:top-5 right-4 sm:right-5 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+            className="absolute top-5 right-5 text-white"
           >
-            <X size={24} />
+            <X />
           </button>
 
           {/* Prev */}
@@ -104,21 +144,22 @@ export default function Page() {
               e.stopPropagation();
               prevImage();
             }}
-            className="absolute left-2 sm:left-4 md:left-10 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+            className="absolute left-5 text-white"
           >
-            <ChevronLeft size={28} className="sm:w-9 sm:h-9" />
+            <ChevronLeft size={30} />
           </button>
 
           {/* Image */}
           <div
-            className="relative w-full max-w-5xl h-[70vh] sm:h-[75vh] md:h-[80vh]"
+            className="relative w-full max-w-5xl h-[75vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={images[selectedIndex]}
               alt="preview"
               fill
-              className="object-contain rounded-lg sm:rounded-xl"
+              className="object-contain"
+              unoptimized
             />
           </div>
 
@@ -128,11 +169,10 @@ export default function Page() {
               e.stopPropagation();
               nextImage();
             }}
-            className="absolute right-2 sm:right-4 md:right-10 text-white bg-white/10 hover:bg-white/20 rounded-full p-2"
+            className="absolute right-5 text-white"
           >
-            <ChevronRight size={28} className="sm:w-9 sm:h-9" />
+            <ChevronRight size={30} />
           </button>
-
         </div>
       )}
     </div>
