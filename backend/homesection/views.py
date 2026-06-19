@@ -14,3 +14,11 @@ from drf_spectacular.utils import extend_schema
 class SliderViewSet(ModelViewSet):
     queryset=Slider.objects.filter(is_active=True)
     serializer_class=SliderSerializer
+
+@extend_schema(
+        tags=["Gallery"],
+        request=GalllerySerializer
+        )
+class GalleryViewSet(ModelViewSet):
+    queryset=Gallery.objects.all()
+    serializer_class=GalllerySerializer

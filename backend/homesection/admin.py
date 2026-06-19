@@ -10,3 +10,5 @@ class SliderImageInline(admin.TabularInline):
 class Slider(admin.ModelAdmin):
     inlines = [SliderImageInline]
     list_display = ("title", "is_active")
+
+admin.site.register(Gallery)

@@ -15,3 +15,7 @@ class SliderSerializer(serializers.ModelSerializer):
 
 
 
+class GalllerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Gallery
+        fields='__all__'
