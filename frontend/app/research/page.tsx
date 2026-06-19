@@ -46,19 +46,19 @@ const GEOGRAPHIC_AREAS = [
     id: "india",
     label: "India",
     description: "Foreign policy, economy, and strategic affairs",
-    icon: Landmark,
+    icon: Globe,
   },
   {
     id: "china",
     label: "China",
     description: "Geopolitics, trade, technology, and regional influence",
-    icon: MapPinned,
+    icon: Globe,
   },
   {
     id: "asean-and-southeast-asia",
     label: "ASEAN and Southeast Asia",
     description: "Connectivity, economic cooperation, and maritime affairs",
-    icon: Building2,
+    icon: Globe,
   },
   {
     id: "europe",
@@ -183,29 +183,37 @@ const STATS = [
 function RidgelineDivider() {
   return (
     <div className="relative h-20 w-full overflow-hidden sm:h-28">
-      <svg
-        viewBox="0 0 1440 160"
-        preserveAspectRatio="none"
-        className="absolute bottom-0 left-0 h-full w-full"
-        aria-hidden="true"
-      >
-        <motion.path
-          d="M0,160 L0,90 L120,55 L260,100 L400,40 L520,85 L660,20 L800,75 L940,45 L1080,95 L1220,35 L1360,80 L1440,55 L1440,160 Z"
-          fill="#2B698E"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 0.06, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-        />
-        <motion.path
-          d="M0,160 L0,120 L150,80 L300,130 L450,70 L600,115 L760,55 L920,110 L1080,75 L1240,125 L1440,90 L1440,160 Z"
-          fill="#7ABDE4"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 0.1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.1, ease: "easeOut" }}
-        />
-      </svg>
+    <svg
+  viewBox="0 0 1440 160"
+  preserveAspectRatio="none"
+  className="absolute bottom-0 left-0 h-full w-full"
+>
+  <defs>
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#0F172A" />
+      <stop offset="100%" stopColor="#2563EB" />
+    </linearGradient>
+
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#38BDF8" />
+      <stop offset="100%" stopColor="#7DD3FC" />
+    </linearGradient>
+  </defs>
+
+  <motion.path
+    d="M0,160 L0,90 L120,55 L260,100 L400,40 L520,85 L660,20 L800,75 L940,45 L1080,95 L1220,35 L1360,80 L1440,55 L1440,160 Z"
+    fill="url(#wave1)"
+    initial={{ opacity: 0, y: 24 }}
+    whileInView={{ opacity: 0.25, y: 0 }}
+  />
+
+  <motion.path
+    d="M0,160 L0,120 L150,80 L300,130 L450,70 L600,115 L760,55 L920,110 L1080,75 L1240,125 L1440,90 L1440,160 Z"
+    fill="url(#wave2)"
+    initial={{ opacity: 0, y: 24 }}
+    whileInView={{ opacity: 0.2, y: 0 }}
+  />
+</svg>
     </div>
   );
 }
@@ -283,7 +291,7 @@ export default function ResearchPage() {
                 <p className="font-serif text-3xl font-semibold sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-sm text-[#7ABDE4]">{stat.label}</p>
+                <p className="mt-1 text-sm text-[#7ABDE4] ">{stat.label}</p>
               </div>
             ))}
           </motion.div>
@@ -311,51 +319,42 @@ export default function ResearchPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {THEMES.map((theme, i) => {
-            const Icon = theme.icon;
-            const isActive = activeTheme === theme.id;
-            return (
-              <motion.button
-                key={theme.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
-                onClick={() =>
-                  setActiveTheme(isActive ? "all" : (theme.id as ThemeId))
-                }
-                className={`group flex flex-col items-start rounded-xl border p-6 text-left transition-colors ${
-                  isActive
-                    ? "border-[#4D8CB2] bg-[#C9622D]/10"
-                    : "border-[#1C2B33]/10 bg-white hover:border-[#4D8CB2]/40"
-                }`}
-              >
-                <span
-                  className={`mb-4 flex h-11 w-11 items-center justify-center rounded-lg ${
-                    isActive
-                      ? "bg-[#4D8CB2] text-white"
-                      : "bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2]"
-                  } transition-colors`}
-                >
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="font-serif text-lg font-semibold">
-                  {theme.label}
-                </h3>
-                <p className="mt-2 text-sm text-[#1C2B33]/60">
-                  {theme.description}
-                </p>
-                <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#4D8CB2]">
-                  {isActive ? "Filtering active" : "Filter by theme"}
-                </span>
-              </motion.button>
-            );
-          })}
+  {THEMES.map((theme, i) => {
+    const Icon = theme.icon;
+    const isActive = activeTheme === theme.id;
+    return (
+      <motion.button
+        key={theme.id}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: i * 0.08 }}
+        whileHover={{ y: -4 }}
+        className={`group flex flex-col rounded-xl border p-6 text-left transition-colors ${
+          isActive
+            ? "border-[#4D8CB2] bg-[#C9622D]/10"
+            : "border-[#1C2B33]/10 bg-white hover:border-[#4D8CB2]/40"
+        }`}
+      >
+        {/* Flex container for icon and heading - now side by side */}
+        <div className="flex items-center gap-3">
+         
+          <h4 className="font-serif text-lg font-semibold">
+            {theme.label}
+          </h4>
         </div>
+        
+        {/* Description remains below */}
+        <p className="mt-2 text-sm text-[#1C2B33]/60">
+          {theme.description}
+        </p>
+      </motion.button>
+    );
+  })}
+</div>
       </section>
 
-      <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-[#FEFFFF]">
+     <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-[#FEFFFF]">
   <div className="mb-10">
     <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-[#1C2B33]">
       Geographic Research Areas
@@ -374,15 +373,17 @@ export default function ResearchPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: i * 0.08 }}
           whileHover={{ y: -4 }}
-          className="group flex flex-col items-start rounded-xl border border-[#1C2B33]/10 bg-white p-6 hover:border-[#4D8CB2]/40 transition-colors"
+          className="group flex flex-col rounded-xl border border-[#1C2B33]/10 bg-white p-6 hover:border-[#4D8CB2]/40 transition-colors"
         >
-          <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2] transition-colors">
-            <Icon className="h-5 w-5" />
-          </span>
-
-          <h3 className="font-serif text-lg font-semibold">
-            {area.label}
-          </h3>
+          {/* Flex container for icon and heading - now side by side */}
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2] transition-colors">
+              <Icon className="h-5 w-5" />
+            </span>
+            <h3 className="font-serif text-lg font-semibold">
+              {area.label}
+            </h3>
+          </div>
 
           <p className="mt-2 text-sm text-[#1C2B33]/60">
             {area.description}

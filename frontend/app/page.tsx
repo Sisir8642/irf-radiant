@@ -78,7 +78,7 @@ export default function Home() {
           <div className="flex flex-row justify-center">
             <Link href={'/about'}>
               <button className="flex items-center gap-2 bg-amber-300 m-10 p-3 rounded">
-                About us
+              Himalayan Dialogue
                 <ArrowRight size={18} />
               </button>
             </Link>
