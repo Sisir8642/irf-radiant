@@ -485,9 +485,16 @@ export default function AboutPage() {
                         <div className="w-24 h-1 bg-[#7ABDE4] mb-10" />
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="bg-white p-7 rounded-xl shadow-sm border-t-4 border-[#2B698E] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]">
-                                <h3 className="text-xl font-semibold mb-4 text-[#2B698E]">Geopolitics and Foreign Policy</h3>
-                                <p className="text-gray-600 leading-relaxed">IRF analyzes global and regional power shifts, providing strategic insights into Nepal's role in the Indo-Pacific, evolving great-power dynamics, multilateral diplomacy, and regional cooperation. Special attention is given to China's rise and its implications for Nepal and South Asia.</p>
+
+                            {/* Geopolitics */}
+                            <div className=" bg-white p-7 rounded-xl shadow-sm border-t-4 border-[#2B698E]
+            transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]">
+                                <h3 className="text-xl font-semibold mb-4 text-[#2B698E]">
+                                    Geopolitics and Foreign Policy
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    IRF analyzes global and regional power shifts, providing strategic insights into Nepal's role in the Indo-Pacific, evolving great-power dynamics, multilateral diplomacy, and regional cooperation. Special attention is given to China's rise and its implications for Nepal and South Asia.
+                                </p>
                             </div>
 
                             <div className="bg-white p-7 rounded-xl shadow-sm border-t-4 border-[#2B698E] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]">
