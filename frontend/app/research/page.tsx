@@ -24,15 +24,15 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const data = [
-    {
-      id: "global-powers",
-      title: "Global Powers",
-      pdfs: [
-        { name: "US Foreign Policy Overview", url: "/pdfs/us-policy.pdf" },
-        { name: "China Strategic Influence", url: "/pdfs/china-strategy.pdf" },
-        { name: "EU Governance Structure", url: "/pdfs/eu-governance.pdf" },
-      ],
-    },]
+  {
+    id: "global-powers",
+    title: "Global Powers",
+    pdfs: [
+      { name: "US Foreign Policy Overview", url: "/pdfs/us-policy.pdf" },
+      { name: "China Strategic Influence", url: "/pdfs/china-strategy.pdf" },
+      { name: "EU Governance Structure", url: "/pdfs/eu-governance.pdf" },
+    ],
+  },]
 
 
 const GEOGRAPHIC_AREAS = [
@@ -72,7 +72,7 @@ const THEMES = [
   {
     id: "foreign-policy-and-diplomacy",
     label: "Foreign Policy and Diplomacy",
-    description: "Border dynamics, regional alliances & strategic affairs",
+    description: "Research examining bilateral and multilateral relations, diplomatic engagement, regional cooperation frameworks, conflict resolution mechanisms, and the evolving strategic interests shaping international affairs across South Asia and beyond.",
     icon: Compass,
   },
   {
@@ -93,7 +93,7 @@ const THEMES = [
     description: "Sustainable travel, heritage & local livelihoods",
     icon: Mountain,
   },
-   {
+  {
     id: "technology,AI-and-data-diplomacy",
     label: "Technology, AI and Data Diplomacy",
     description: "Trade corridors, connectivity & cross-border investment",
@@ -104,9 +104,9 @@ const THEMES = [
 type ThemeId = (typeof THEMES)[number]["id"] | "all";
 
 const TYPE_FILTERS = [
-  { id: "all", label: "All", icon: Layers },
+  // { id: "all", label: "All", icon: Layers },
   { id: "papers", label: "Papers", icon: FileText },
-  { id: "briefs", label: "Briefs", icon: Newspaper },
+  // { id: "briefs", label: "Briefs", icon: Newspaper },
   { id: "books", label: "Books", icon: BookOpen },
 ] as const;
 
@@ -170,63 +170,55 @@ const BOOKS = [
   { title: "Ridgeline Futures", author: "P. Karki" },
 ];
 
-const STATS = [
-  { value: "40+", label: "Research outputs" },
-  { value: "4", label: "Focus areas" },
-  { value: "25+", label: "Contributing scholars" },
-];
+// const STATS = [
+//   { value: "40+", label: "Research outputs" },
+//   { value: "4", label: "Focus areas" },
+//   { value: "25+", label: "Contributing scholars" },
+// ];
 
-// ---------------------------------------------------------------------------
-// Decorative ridgeline divider — the page's signature element
-// ---------------------------------------------------------------------------
+// function RidgelineDivider() {
+//   return (
+//     <div className="relative h-20 w-full overflow-hidden sm:h-28">
+//     <svg
+//   viewBox="0 0 1440 160"
+//   preserveAspectRatio="none"
+//   className="absolute bottom-0 left-0 h-full w-full"
+// >
+//   <defs>
+//     <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
+//       <stop offset="0%" stopColor="#0F172A" />
+//       <stop offset="100%" stopColor="#2563EB" />
+//     </linearGradient>
 
-function RidgelineDivider() {
-  return (
-    <div className="relative h-20 w-full overflow-hidden sm:h-28">
-    <svg
-  viewBox="0 0 1440 160"
-  preserveAspectRatio="none"
-  className="absolute bottom-0 left-0 h-full w-full"
->
-  <defs>
-    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stopColor="#0F172A" />
-      <stop offset="100%" stopColor="#2563EB" />
-    </linearGradient>
+//     <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+//       <stop offset="0%" stopColor="#38BDF8" />
+//       <stop offset="100%" stopColor="#7DD3FC" />
+//     </linearGradient>
+//   </defs>
 
-    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stopColor="#38BDF8" />
-      <stop offset="100%" stopColor="#7DD3FC" />
-    </linearGradient>
-  </defs>
+//   <motion.path
+//     d="M0,160 L0,90 L120,55 L260,100 L400,40 L520,85 L660,20 L800,75 L940,45 L1080,95 L1220,35 L1360,80 L1440,55 L1440,160 Z"
+//     fill="url(#wave1)"
+//     initial={{ opacity: 0, y: 24 }}
+//     whileInView={{ opacity: 0.25, y: 0 }}
+//   />
 
-  <motion.path
-    d="M0,160 L0,90 L120,55 L260,100 L400,40 L520,85 L660,20 L800,75 L940,45 L1080,95 L1220,35 L1360,80 L1440,55 L1440,160 Z"
-    fill="url(#wave1)"
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 0.25, y: 0 }}
-  />
-
-  <motion.path
-    d="M0,160 L0,120 L150,80 L300,130 L450,70 L600,115 L760,55 L920,110 L1080,75 L1240,125 L1440,90 L1440,160 Z"
-    fill="url(#wave2)"
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 0.2, y: 0 }}
-  />
-</svg>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
+//   <motion.path
+//     d="M0,160 L0,120 L150,80 L300,130 L450,70 L600,115 L760,55 L920,110 L1080,75 L1240,125 L1440,90 L1440,160 Z"
+//     fill="url(#wave2)"
+//     initial={{ opacity: 0, y: 24 }}
+//     whileInView={{ opacity: 0.2, y: 0 }}
+//   />
+// </svg>
+//     </div>
+//   );
+// }
 
 export default function ResearchPage() {
   const [activeTheme, setActiveTheme] = useState<ThemeId>("all");
   const [activeType, setActiveType] = useState<TypeId>("all");
   const [query, setQuery] = useState("");
-
+const [activeArea, setActiveArea] = useState<string | null>(null);
   const filtered = useMemo(() => {
     return PUBLICATIONS.filter((pub) => {
       const themeMatch = activeTheme === "all" || pub.theme === activeTheme;
@@ -243,10 +235,7 @@ export default function ResearchPage() {
 
   return (
     <main className="min-h-screen  text-[#1C2B33]">
-      {/* ------------------------------------------------------------------ */}
-      {/* Page header */}
-      {/* ------------------------------------------------------------------ */}
-      <section className="border-b bg-[#1E2A3A] text-white">
+      <section className=" bg-[#1E2A3A] text-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -265,6 +254,7 @@ export default function ResearchPage() {
           >
             Research &amp; Publications
           </motion.h1>
+          <div className="w-full h-px bg-white/70" />
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -277,13 +267,13 @@ export default function ResearchPage() {
             mountain economies.
           </motion.p>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8"
-          >
-            {STATS.map((stat) => (
+          > */}
+            {/* {STATS.map((stat) => (
               <div
                 key={stat.label}
                 className="border-l-2 border-[#7ABDE4] pl-4"
@@ -293,20 +283,17 @@ export default function ResearchPage() {
                 </p>
                 <p className="mt-1 text-sm text-[#7ABDE4] ">{stat.label}</p>
               </div>
-            ))}
-          </motion.div>
+            ))} */}
+          {/* </motion.div> */}
         </div>
       </section>
 
-      <RidgelineDivider />
+      {/* <RidgelineDivider /> */}
 
-      {/* ------------------------------------------------------------------ */}
-      {/* Research themes */}
-      {/* ------------------------------------------------------------------ */}
       <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-gradient-to-br from-[#2B698E] to-[#7ABDE4]">
         <div className="mb-10 flex items-end justify-between gap-4">
           <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-white">
-           Thematic Research Areas
+            Thematic Research Areas
           </h2>
           {activeTheme !== "all" && (
             <button
@@ -319,87 +306,207 @@ export default function ResearchPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-  {THEMES.map((theme, i) => {
-    const Icon = theme.icon;
-    const isActive = activeTheme === theme.id;
-    return (
-      <motion.button
-        key={theme.id}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: i * 0.08 }}
-        whileHover={{ y: -4 }}
-        className={`group flex flex-col rounded-xl border p-6 text-left transition-colors ${
-          isActive
-            ? "border-[#4D8CB2] bg-[#C9622D]/10"
-            : "border-[#1C2B33]/10 bg-white hover:border-[#4D8CB2]/40"
-        }`}
-      >
-        {/* Flex container for icon and heading - now side by side */}
-        <div className="flex items-center gap-3">
-         
-          <h4 className="font-serif text-lg font-semibold">
-            {theme.label}
-          </h4>
-        </div>
-        
-        {/* Description remains below */}
-        <p className="mt-2 text-sm text-[#1C2B33]/60">
-          {theme.description}
-        </p>
-      </motion.button>
-    );
-  })}
+          {THEMES.map((theme, i) => {
+            const Icon = theme.icon;
+            const isActive = activeTheme === theme.id;
+            return (
+              <motion.button
+                key={theme.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+                className={`group relative overflow-hidden rounded-xl border p-6 text-left transition-all duration-300
+  ${
+    isActive
+      ? "border-white bg-white text-[#1E2A3A] shadow-xl"
+      : "border-white/20 bg-white/10 text-white hover:bg-white/20"
+  }`}
+                  onClick={() =>
+  setActiveTheme(isActive ? "all" : theme.id)
+}
+              >
+                <div className="flex items-center gap-3">
+
+                  <h4 className="font-serif text-lg font-semibold">
+                    {theme.label}
+                  </h4>
+                </div>
+
+               <div className="mt-3 flex items-center justify-between">
+  <span className="text-sm opacity-80">
+    Explore Area
+  </span>
+
+  <motion.span
+    animate={{ rotate: isActive ? 90 : 0 }}
+    transition={{ duration: 0.25 }}
+  >
+    →
+  </motion.span>
 </div>
+              </motion.button>
+            );
+          })}
+        </div>
+        <AnimatePresence mode="wait">
+  {activeTheme !== "all" && (
+    <motion.div
+      key={activeTheme}
+      initial={{ opacity: 0, height: 0, y: 20 }}
+      animate={{ opacity: 1, height: "auto", y: 0 }}
+      exit={{ opacity: 0, height: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="overflow-hidden"
+    >
+      {(() => {
+        const selectedTheme = THEMES.find(
+          (t) => t.id === activeTheme
+        );
+
+        if (!selectedTheme) return null;
+
+        return (
+          <div className="mt-8 rounded-3xl bg-white p-8 shadow-xl">
+            <div className="flex items-start gap-6">
+              <div className="rounded-2xl bg-[#2B698E]/10 p-4">
+                <selectedTheme.icon className="h-8 w-8 text-[#2B698E]" />
+              </div>
+
+              <div>
+                <h3 className="font-serif text-3xl font-semibold text-[#1E2A3A]">
+                  {selectedTheme.label}
+                </h3>
+
+                <p className="mt-4 max-w-4xl text-lg leading-8 text-[#1C2B33]/70">
+                  {selectedTheme.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+    </motion.div>
+  )}
+</AnimatePresence>
       </section>
 
-     <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-[#FEFFFF]">
-  <div className="mb-10">
-    <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-[#1C2B33]">
-      Geographic Research Areas
-    </h2>
-  </div>
+      <section className="mx-auto max-w-full px-30 py-16 sm:py-20 bg-[#FEFFFF]">
+        <div className="mb-10">
+          <h2 className="font-serif text-2xl font-semibold sm:text-3xl text-[#1C2B33]">
+            Geographic Research Areas
+          </h2>
+        </div>
 
-  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-    {GEOGRAPHIC_AREAS.map((area, i) => {
-      const Icon = area.icon;
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {GEOGRAPHIC_AREAS.map((area, i) => {
+            const Icon = area.icon;
 
-      return (
-        <motion.div
-          key={area.id}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.08 }}
-          whileHover={{ y: -4 }}
-          className="group flex flex-col rounded-xl border border-[#1C2B33]/10 bg-white p-6 hover:border-[#4D8CB2]/40 transition-colors"
-        >
-          {/* Flex container for icon and heading - now side by side */}
-          <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2] transition-colors">
-              <Icon className="h-5 w-5" />
-            </span>
-            <h3 className="font-serif text-lg font-semibold">
-              {area.label}
-            </h3>
+            return (
+              <motion.button
+  key={area.id}
+  onClick={() =>
+    setActiveArea(activeArea === area.id ? null : area.id)
+  }
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: i * 0.08 }}
+  whileHover={{ y: -4 }}
+  whileTap={{ scale: 0.98 }}
+  className={`group relative flex flex-col rounded-xl border p-6 text-left transition-all duration-300
+    ${
+      activeArea === area.id
+        ? "border-[#4D8CB2] bg-[#2B698E] text-white shadow-xl"
+        : "border-[#1C2B33]/10 bg-white hover:border-[#4D8CB2]/40"
+    }`}
+>
+                {/* Flex container for icon and heading - now side by side */}
+                <div className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#1C2B33]/5 text-[#1C2B33] group-hover:bg-[#4D8CB2]/15 group-hover:text-[#4D8CB2] transition-colors">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-serif text-lg font-semibold">
+                    {area.label}
+                  </h3>
+                </div>
+
+               <div className="mt-4 flex items-center justify-between">
+  <span
+    className={`text-sm ${
+      activeArea === area.id
+        ? "text-white/80"
+        : "text-[#1C2B33]/60"
+    }`}
+  >
+    Explore Region
+  </span>
+
+  <motion.span
+    animate={{
+      rotate: activeArea === area.id ? 90 : 0,
+    }}
+    transition={{ duration: 0.25 }}
+    className="text-lg"
+  >
+    →
+  </motion.span>
+</div>
+              </motion.button>
+            );
+          })}
+        </div>
+        <AnimatePresence mode="wait">
+  {activeArea && (
+    <motion.div
+      key={activeArea}
+      initial={{ opacity: 0, height: 0, y: 20 }}
+      animate={{ opacity: 1, height: "auto", y: 0 }}
+      exit={{ opacity: 0, height: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="overflow-hidden"
+    >
+      {(() => {
+        const selectedArea = GEOGRAPHIC_AREAS.find(
+          (a) => a.id === activeArea
+        );
+
+        if (!selectedArea) return null;
+
+        const AreaIcon = selectedArea.icon;
+
+        return (
+          <div className="mt-8 rounded-3xl border border-[#4D8CB2]/20 bg-gradient-to-r from-[#2B698E]/5 to-[#7ABDE4]/10 p-8">
+            <div className="flex items-start gap-6">
+              <div className="rounded-2xl bg-[#2B698E]/10 p-4">
+                <AreaIcon className="h-8 w-8 text-[#2B698E]" />
+              </div>
+
+              <div>
+                <h3 className="font-serif text-3xl font-semibold text-[#1E2A3A]">
+                  {selectedArea.label}
+                </h3>
+
+                <p className="mt-4 max-w-4xl text-lg leading-8 text-[#1C2B33]/70">
+                  {selectedArea.description}
+                </p>
+              </div>
+            </div>
           </div>
-
-          <p className="mt-2 text-sm text-[#1C2B33]/60">
-            {area.description}
-          </p>
-        </motion.div>
-      );
-    })}
-  </div>
-</section>
+        );
+      })()}
+    </motion.div>
+  )}
+</AnimatePresence>
+      </section>
 
       {/* ------------------------------------------------------------------ */}
       {/* Featured research */}
       {/* ------------------------------------------------------------------ */}
       <section className="mx-auto max-w-full px-50 pb-16 sm:pb-20 pt-10 bg-[#0F172A]">
         <h2 className="mb-10 font-serif text-2xl font-semibold sm:text-3xl text-white">
-         Research Article
+          Research Article
         </h2>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -457,51 +564,51 @@ export default function ResearchPage() {
         </div>
       </section>
       <section className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
 
-        {/* HEADER */}
-        <div className="text-center mb-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1E2A3A]">
-            Global Powers & Emerging Regions Studies
-          </h2>
-          <p className="text-gray-600 mt-4">
-            Click a category to view PDFs
-          </p>
+          {/* HEADER */}
+          <div className="text-center mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1E2A3A]">
+              Global Powers & Emerging Regions Studies
+            </h2>
+            <p className="text-gray-600 mt-4">
+              Click a category to view PDFs
+            </p>
+          </div>
+
+          {/* ACCORDION LIST */}
+          <div className="space-y-6">
+            {data.map((cat) => (
+              <details
+                key={cat.id}
+                className="bg-white rounded-2xl shadow-sm p-6 group"
+              >
+                <summary className="cursor-pointer text-xl font-semibold text-[#1E2A3A] flex justify-between items-center">
+                  {cat.title}
+                  <span className="text-sm text-gray-500 group-open:rotate-180 transition">
+                    ▼
+                  </span>
+                </summary>
+
+                <div className="mt-6 grid md:grid-cols-2 gap-4">
+                  {cat.pdfs.map((pdf, i) => (
+                    <a
+                      key={i}
+                      href={pdf.url}
+                      target="_blank"
+                      className="p-4 border rounded-xl hover:bg-gray-50 flex justify-between"
+                    >
+                      <span>{pdf.name}</span>
+                      <span className="text-[#2B698E] text-sm">Open →</span>
+                    </a>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+
         </div>
-
-        {/* ACCORDION LIST */}
-        <div className="space-y-6">
-          {data.map((cat) => (
-            <details
-              key={cat.id}
-              className="bg-white rounded-2xl shadow-sm p-6 group"
-            >
-              <summary className="cursor-pointer text-xl font-semibold text-[#1E2A3A] flex justify-between items-center">
-                {cat.title}
-                <span className="text-sm text-gray-500 group-open:rotate-180 transition">
-                  ▼
-                </span>
-              </summary>
-
-              <div className="mt-6 grid md:grid-cols-2 gap-4">
-                {cat.pdfs.map((pdf, i) => (
-                  <a
-                    key={i}
-                    href={pdf.url}
-                    target="_blank"
-                    className="p-4 border rounded-xl hover:bg-gray-50 flex justify-between"
-                  >
-                    <span>{pdf.name}</span>
-                    <span className="text-[#2B698E] text-sm">Open →</span>
-                  </a>
-                ))}
-              </div>
-            </details>
-          ))}
-        </div>
-
-      </div>
-    </section>
+      </section>
 
       {/* ------------------------------------------------------------------ */}
       {/* All publications */}
@@ -521,11 +628,10 @@ export default function ResearchPage() {
                   <button
                     key={t.id}
                     onClick={() => setActiveType(t.id)}
-                    className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition-colors ${
-                      isActive
+                    className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition-colors ${isActive
                         ? "border-[#1C2B33] bg-[#1C2B33] text-white"
                         : "border-[#1C2B33]/15 bg-white text-[#1C2B33]/70 hover:border-[#1C2B33]/30"
-                    }`}
+                      }`}
                   >
                     <Icon className="h-3.5 w-3.5" />
                     {t.label}

@@ -65,7 +65,9 @@ export default function Header() {
 
                 <div className="absolute left-0 mt-2 w-56 bg-[#7ABDE4]  border rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
                   <Link
-                    href="/himalayan_dialogue"
+                    href="https://himalayandialogue.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-left px-3 py-1 rounded-10 border-2 border-transparent text-white-700 font-medium
              transition-all duration-300 hover:text-[#010c12] hover:border-[#d5d6e3]"
                   >
@@ -103,7 +105,7 @@ export default function Header() {
     <nav className="px-4 py-4 space-y-3">
       <Link href="/" className="block text-gray-700 hover:text-[#2B698E] font-medium">Home</Link>
       <Link href="/about" className="block text-gray-700 hover:text-[#2B698E] font-medium">About Us</Link>
-      <Link href="/himalayan_dialogue" className="block text-gray-700 hover:text-[#2B698E] font-medium">Himalayan Dialogue</Link>
+      <Link href="https://himalayandialogue.com/" target="_blank" rel="noopener noreferrer" className="block text-gray-700 hover:text-[#2B698E] font-medium">Himalayan Dialogue</Link>
       <Link href="/contact" className="block text-gray-700 hover:text-[#2B698E] font-medium">Contact</Link>
     </nav>
   </div>
