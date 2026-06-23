@@ -2,12 +2,20 @@ from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from .serializers import *
 from .models import *
+from drf_spectacular.utils import extend_schema
 
 # Create your views here.
+@extend_schema(
+        tags=["Themed "],
+        request=ThemedSerializer
+)
 class ThemeViewset(ModelViewSet):
     queryset=Theme.objects.all()
     serializer_class=ThemedSerializer
-
+@extend_schema(
+        tags=["Publication"],
+        request=PublicationTypeSerializer
+)
 class PublicationTypeViewSet(ModelViewSet):
     queryset = PublicationType.objects.all()
     serializer_class = PublicationTypeSerializer
@@ -30,7 +38,10 @@ class PublicattionViewset(ModelViewSet):
             queryset = queryset.filter(theme_id=theme)
 
         return queryset
-
+@extend_schema(
+        tags=["Book"],
+        request=BookSerializer
+)
 class BookViewset(ModelViewSet):
     queryset=Book.objects.all()
     serializer_class=BookSerializer
@@ -43,6 +54,10 @@ class GlobalPowerViewset(ModelViewSet):
     queryset=GloabalPower.objects.all()
     serializer_class=GlobalSerializer
 
+@extend_schema(
+        tags=["Research"],
+        request=ResearchArticalSerializer
+)
 class ResearchArticalViewset(ModelViewSet):
     queryset=ResearchArtical.objects.all()
     serializer_class=ResearchArticalSerializer
