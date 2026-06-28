@@ -74,6 +74,7 @@ class Program(models.Model):
     category = models.CharField(max_length=100, blank=True)
     image = models.ImageField(upload_to="programs/",blank=True,null=True)
     description = models.TextField(blank=True)
+    
     objective = models.TextField(blank=True)
     participants = models.TextField(blank=True)
     expected_outcome = models.TextField(blank=True)

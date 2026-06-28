@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from .models import *
 
-class ThemedSerializer(serializers.Serializer):
+class ThemedSerializer(serializers.ModelSerializer):
     class Meta:
         model=Theme
         fields='__all__'
 
-class PublicationTypeSerializer(serializers.Serializer):
+class PublicationTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model=PublicationType
         fields='__all__'
@@ -24,7 +24,7 @@ class BookSerializer(serializers.ModelSerializer):
         model=Book
         fields="__all__"
 
-class GlobalCategorySerializer(serializers.ModelField):
+class GlobalCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model=GlobalCategory
         fields="__all__"
