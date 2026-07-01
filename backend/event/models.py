@@ -62,8 +62,6 @@ class OtherSite(models.Model):
         return self.site1
 
 
-
-
 class Program(models.Model):
     STATUS_CHOICES = (
         ("current", "Current"),
@@ -83,3 +81,18 @@ class Program(models.Model):
 
     def __str__(self):
         return self.title
+    
+class ProgramHighlight(models.Model):
+    program = models.ForeignKey(
+        Program,
+        related_name="highlights",
+        on_delete=models.CASCADE
+    )
+    text = models.CharField(max_length=255, blank=True, null=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return self.text

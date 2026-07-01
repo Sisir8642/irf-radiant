@@ -29,7 +29,26 @@ class OtherSiteSerializer(serializers.ModelSerializer):
         model=OtherSite
         fields="__all__"
 
-class ProgramSerializer(serializers.ModelSerializer):
+class ProgramHighlightSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Program
-        fields="__all__"
+        model = ProgramHighlight
+        fields = ["id", "text"]
+        
+class ProgramSerializer(serializers.ModelSerializer):
+    highlights = ProgramHighlightSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Program
+        fields = [
+            "id",
+            "title",
+            "category",
+            "image",
+            "description",
+            "objective",
+            "participants",
+            "expected_outcome",
+            "date",
+            "status",
+            "highlights",
+        ]
