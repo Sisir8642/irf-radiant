@@ -1,6 +1,25 @@
-.DS_Store
-backend/db.sqlite3
+# Python
+__pycache__/
+*.py[cod]
 
-.env
+# Django
+db.sqlite3
+*.sqlite3
+media/
 
+# Build
+.next/
+dist/
+build/
+
+# Archives
 *.zip
+*.tar
+*.gz
+
+# SQL dumps
+*.sql
+*.dump
+
+# Fixtures (optional)
+# data.json
