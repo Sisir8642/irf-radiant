@@ -91,9 +91,9 @@ const Program = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-50">
+      <section className="py-10 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
+          <div className="mb-12">
             <span className="uppercase tracking-[4px] text-[#2B698E] text-sm font-semibold">
               Active Initiatives
             </span>
@@ -145,7 +145,7 @@ const Program = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-50">
+      <section className="py-10 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="uppercase tracking-[4px] text-[#2B698E] text-sm font-semibold">

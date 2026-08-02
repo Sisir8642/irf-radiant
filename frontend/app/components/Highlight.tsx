@@ -2,48 +2,106 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
-const sessions = [
-  {
-    id: 1,
-    title: "SHIFTING GLOBAL ORDER",
-    subtitle: "NAVIGATING NEW GEOPOLITICAL REALITIES",
-    image: "/images/dummy.png"
-  },
-  {
-    id: 2,
-    title: "NEPAL'S PATH TO PROSPERITY:",
-    subtitle: "EXPLORING ECONOMIC DIPLOMACY",
-    image: "/images/dummy.png"
-  },
-  {
-    id: 3,
-    title: "NEPAL'S FOREIGN POLICY:",
-    subtitle: "CHARTING AN INDEPENDENT COURSE",
-    image: "/images/dummy.png"
-  },
-  
-];
+interface Session {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  order: number;
+}
+
+interface HighlightData {
+  id: number;
+  title: string;
+  tagline: string;
+  description: string;
+  button_text: string;
+  button_url: string;
+  slide_image_1: string;
+  slide_image_2: string;
+  slide_image_3: string;
+  sessions: Session[];
+}
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:8000";
 
 export default function HimalayanDialogueSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredSession, setHoveredSession] = useState<number | null>(null);
+  const [data, setData] = useState<HighlightData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+useEffect(() => {
+  const fetchHighlight = async () => {
+    try {
+      setLoading(true);
+
+      const response = await fetch(`${BASE_URL}/api/highlight/`);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch");
+      }
+
+      const result: HighlightData | HighlightData[] =
+        await response.json();
+
+      setData(Array.isArray(result) ? result[0] : result);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load highlight data.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchHighlight();
+}, []);
+
+  const slides = data
+    ? [data.slide_image_1, data.slide_image_2, data.slide_image_3].filter(Boolean)
+    : [];
+
+  const slideCount = slides.length || 1;
 
   // Auto-advance slider
   useEffect(() => {
+    if (slideCount <= 1) return;
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
+      setCurrentSlide((prev) => (prev + 1) % slideCount);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slideCount]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % 3);
+    setCurrentSlide((prev) => (prev + 1) % slideCount);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + 3) % 3);
+    setCurrentSlide((prev) => (prev - 1 + slideCount) % slideCount);
   };
+
+  const sortedSessions = data?.sessions
+    ? [...data.sessions].sort((a, b) => a.order - b.order)
+    : [];
+
+  if (loading) {
+    return (
+      <div className="w-full bg-[#3d6b8c] py-20 flex items-center justify-center">
+        <p className="text-white text-lg font-medium">Loading...</p>
+      </div>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <div className="w-full bg-[#3d6b8c] py-20 flex items-center justify-center">
+        <p className="text-white text-lg font-medium">{error || "No data available."}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full bg-[#3d6b8c] relative overflow-hidden py-20">
@@ -60,50 +118,37 @@ export default function HimalayanDialogueSection() {
           {/* Left Content */}
           <div className="p-8 md:p-12 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 uppercase">
-              The Himalayan Dialogue
+              {data.title}
             </h2>
-            
+
             <p className="text-gray-700 mb-4 italic leading-relaxed">
-              IRF&apos; flagship platform for strategic dialogue on geopolitics,
-              diplomacy, and regional cooperation in the Himalayan region.
+              {data.tagline}
             </p>
 
             <p className="text-gray-700 mb-6 leading-relaxed">
-              The inaugural edition, held on April 7, 2025, brought
-              together 200+ diplomats, policymakers, and experts to
-              explore Nepal&apos; role in an evolving global landscape.
+              {data.description}
             </p>
 
             <div className="space-y-3 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full border-2 border-blue-900 flex items-center justify-center shrink-0 mt-0.5">
-                  <div className="w-2 h-2 rounded-full bg-blue-900"></div>
+              {sortedSessions.map((session) => (
+                <div key={session.id} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full border-2 border-blue-900 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-blue-900"></div>
+                  </div>
+                  <span className="text-gray-800 font-medium">{session.title}</span>
                 </div>
-                <span className="text-gray-800 font-medium">Shifting Global Order</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full border-2 border-blue-900 flex items-center justify-center shrink-0 mt-0.5">
-                  <div className="w-2 h-2 rounded-full bg-blue-900"></div>
-                </div>
-                <span className="text-gray-800 font-medium">Economic Diplomacy for Prosperity</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full border-2 border-blue-900 flex items-center justify-center shrink-0 mt-0.5">
-                  <div className="w-2 h-2 rounded-full bg-blue-900"></div>
-                </div>
-                <span className="text-gray-800 font-medium">Foreign Policy:</span>
-              </div>
+              ))}
             </div>
 
             {/* Progress Indicator */}
             <div className="flex gap-2 mb-6">
-              {[0, 1, 2].map((index) => (
+              {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className="h-1 flex-1 rounded-full transition-all duration-300"
                   style={{
-                    backgroundColor: currentSlide === index ? '#1e3a5f' : '#d1d5db',
+                    backgroundColor: currentSlide === index ? "#1e3a5f" : "#d1d5db",
                   }}
                 />
               ))}
@@ -117,36 +162,42 @@ export default function HimalayanDialogueSection() {
                 className="flex h-full transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {[0, 1, 2].map((index) => (
+                {slides.map((image, index) => (
                   <div key={index} className="min-w-full h-full relative">
                     <img
-                      src="/images/dummy.png"
+                      src={image}
                       alt={`Slide ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <button className="bg-[#1e3a5f] hover:bg-[#2d5570] text-white font-semibold px-8 py-3 rounded transition-colors duration-300 text-sm uppercase tracking-wide">
-                        View Event Page
-                      </button>
-                    </div>
+                    <Link href={data.button_url || "/programs"}>
+                      <div className="absolute bottom-8 left-8 right-8">
+                        <button className="bg-[#1e3a5f] hover:bg-[#2d5570] text-white font-semibold px-8 py-3 rounded transition-colors duration-300 text-sm uppercase tracking-wide">
+                          {data.button_text || "View Event Page"}
+                        </button>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 z-10"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-800" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 z-10"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-800" />
-            </button>
+            {slides.length > 1 && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 z-10"
+                >
+                  <ChevronLeft className="w-6 h-6 text-gray-800" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-300 z-10"
+                >
+                  <ChevronRight className="w-6 h-6 text-gray-800" />
+                </button>
+              </>
+            )}
           </div>
         </div>
 
@@ -160,7 +211,7 @@ export default function HimalayanDialogueSection() {
         {/* Sessions Grid */}
         <div className="relative z-10 mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-8xl mx-auto">
-            {sessions.map((session) => (
+            {sortedSessions.map((session) => (
               <div
                 key={session.id}
                 className="relative group cursor-pointer"
@@ -170,7 +221,10 @@ export default function HimalayanDialogueSection() {
                 <div
                   className="relative overflow-hidden rounded-lg shadow-lg transition-all duration-300"
                   style={{
-                    transform: hoveredSession === session.id ? 'translateY(-12px) scale(1.02)' : 'translateY(0) scale(1)',
+                    transform:
+                      hoveredSession === session.id
+                        ? "translateY(-12px) scale(1.02)"
+                        : "translateY(0) scale(1)",
                     zIndex: hoveredSession === session.id ? 20 : 10,
                   }}
                 >
@@ -183,7 +237,7 @@ export default function HimalayanDialogueSection() {
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    
+
                     {/* Text Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                       <h3 className="text-xl font-bold mb-1 leading-tight">

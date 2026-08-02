@@ -1,0 +1,1540 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$2N9ebW06ymFNM3jfRF6Du9$uL0vwU4O06p7KzIeds4UguN3M5PiYOTdwZ5iluyMmQg=",
+        "last_login": "2026-06-28T04:40:28.305Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-06-19T06:52:25.495Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "50ykkl1vpaqy0n0i8lyzgde3660nz3hy",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hApjBSX7nsGMswMUjU0Ke3KeHfbpAvdvvf-f6uI61Li2mSOI6urMur0yxLSU-ou-IH1Pmma6jKPSe-JPmzTw8Tyuh3t30HBVrZ1AmBETIReJPuMwQQPIM5c4JyFe3bZeOyJHELurPOQOrTBZbsxCurzBRxIOP0:1waT5l:O9nQKWtCcdTpovYNuxLq_5RphraQPQOEacYTCzEe-kg",
+        "expire_date": "2026-07-03T06:52:41.811Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "m08akqcjrn4mmsljvq85u2dgaaeju3vp",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hApjBSX7nsGMswMUjU0Ke3KeHfbpAvdvvf-f6uI61Li2mSOI6urMur0yxLSU-ou-IH1Pmma6jKPSe-JPmzTw8Tyuh3t30HBVrZ1AmBETIReJPuMwQQPIM5c4JyFe3bZeOyJHELurPOQOrTBZbsxCurzBRxIOP0:1wdhJk:HV-OYNRjx-6j0dtFfqonQIevA9amQLX5CA8qzAOKLGI",
+        "expire_date": "2026-07-12T04:40:28.306Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "n4ffwydux3d6253fji0719yx3n357dig",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hApjBSX7nsGMswMUjU0Ke3KeHfbpAvdvvf-f6uI61Li2mSOI6urMur0yxLSU-ou-IH1Pmma6jKPSe-JPmzTw8Tyuh3t30HBVrZ1AmBETIReJPuMwQQPIM5c4JyFe3bZeOyJHELurPOQOrTBZbsxCurzBRxIOP0:1wd2uG:VZr1xYDumdIUCGTrLOEwe8CponUAvfxowZ8BqWIHPGk",
+        "expire_date": "2026-07-10T09:31:28.712Z"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 1,
+    "fields": {
+        "image": "gallery/IMG_20241208_104801.jpeg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 2,
+    "fields": {
+        "image": "gallery/pexels-chris-f-38966-8891521.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 3,
+    "fields": {
+        "image": "gallery/malaysia_image-50kb.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 4,
+    "fields": {
+        "image": "gallery/dubaiimage.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 5,
+    "fields": {
+        "image": "gallery/malaysia_image-50kb_NaQUFA1.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 6,
+    "fields": {
+        "image": "gallery/malaysia_image-50kb_1R9tCwT.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 7,
+    "fields": {
+        "image": "gallery/malaysia_image-50kb_vWigTHS.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 8,
+    "fields": {
+        "image": "gallery/pexels-chris-f-38966-8891521_OMpcwwV.jpg"
+    }
+},
+{
+    "model": "homesection.gallery",
+    "pk": 9,
+    "fields": {
+        "image": "gallery/goal.png"
+    }
+},
+{
+    "model": "about_us.companymission",
+    "pk": 2,
+    "fields": {
+        "mission": "Our Mission\r\nTo provide high-quality, customer-focused technology solutions tailored to meet diverse business needs.\r\nTo deliver innovative, secure, and cost-effective IT services with excellence and professionalism.\r\nTo build long-term relationships through trust, transparency, and exceptional customer support.\r\nTo continuously embrace emerging technologies and best practices that create value for our clients.\r\nTo contribute to digital transformation by empowering organizations with reliable and scalable solutions.",
+        "vision": "Our Vision\r\n\r\nTo become a trusted leader in delivering innovative, reliable, and technology-driven solutions that empower businesses and individuals to achieve sustainable growth in the digital era."
+    }
+},
+{
+    "model": "about_us.companymission",
+    "pk": 3,
+    "fields": {
+        "mission": "ASDFGHJKL;",
+        "vision": "AZXDCFVGBHE5RCYVGHYGUHJ"
+    }
+},
+{
+    "model": "about_us.companymission",
+    "pk": 4,
+    "fields": {
+        "mission": "## Our Mission\r\n\r\n* To provide high-quality, customer-focused technology solutions tailored to meet diverse business needs.\r\n* To deliver innovative, secure, and cost-effective IT services with excellence and professionalism.\r\n* To build long-term relationships through trust, transparency, and exceptional customer support.\r\n* To continuously embrace emerging technologies and best practices that create value for our clients.\r\n* To contribute to digital transformation by empowering organizations with reliable and scalable solutions.",
+        "vision": "## Our Vision\r\n\r\nTo become a trusted leader in delivering innovative, reliable, and technology-driven solutions that empower businesses and individuals to achieve sustainable growth in the digital era."
+    }
+},
+{
+    "model": "about_us.recentachievement",
+    "pk": 1,
+    "fields": {
+        "title": "achivement 1",
+        "description": "this is an achivement from the irf"
+    }
+},
+{
+    "model": "commentaries.commentaries",
+    "pk": 1,
+    "fields": {
+        "title": "nepal bank limited",
+        "description": "Beyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day.\r\n\r\nBeyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day."
+    }
+},
+{
+    "model": "commentaries.commentaries",
+    "pk": 2,
+    "fields": {
+        "title": "asdfghjkl",
+        "description": "Beyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day.\r\n\r\nBeyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day."
+    }
+},
+{
+    "model": "commentaries.commentaries",
+    "pk": 3,
+    "fields": {
+        "title": "qwertyuio",
+        "description": "Beyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day.\r\n\r\nBeyond +2 Hackathon & AI Events: The Cosmos College of Management and Technology (Sitapaila) is hosting the Beyond +2 Hackathon on June 27–28. Additionally, a Build With AI/Localhost networking event will be held at MIT College (Kamaladi) on June 27, followed by the PyTorch Meetup Nepal at Herald College on the same day."
+    }
+},
+{
+    "model": "event.program",
+    "pk": 1,
+    "fields": {
+        "title": "The Himalayan Dialogue",
+        "category": "Flagship Program",
+        "image": "programs/chairman.png",
+        "description": "A premier strategic dialogue platform bringing together policymakers, diplomats, scholars, and business leaders to discuss regional and global issues through a Himalayan lens.",
+        "objective": "",
+        "participants": "",
+        "expected_outcome": "",
+        "date": "",
+        "status": "current"
+    }
+},
+{
+    "model": "event.program",
+    "pk": 2,
+    "fields": {
+        "title": "South Asia Strategic Forum 2026",
+        "category": "",
+        "image": "",
+        "description": "The South Asia Strategic Forum will convene policymakers, diplomats, scholars, and business leaders to discuss the evolving geopolitical and economic landscape of South Asia. The forum will explore regional connectivity, strategic competition, economic integration, and opportunities for cooperative security.",
+        "objective": "Promote strategic dialogue and policy collaboration across South Asia.",
+        "participants": "Government officials, diplomats, academics, business leaders, and regional experts.",
+        "expected_outcome": "Policy recommendations and strengthened regional partnerships.",
+        "date": "March 2026",
+        "status": "upcoming"
+    }
+},
+{
+    "model": "event.program",
+    "pk": 3,
+    "fields": {
+        "title": "Climate Diplomacy Summit",
+        "category": "",
+        "image": "",
+        "description": "The summit will focus on climate resilience, Himalayan sustainability, and international climate negotiations. It aims to amplify mountain-state perspectives within global climate governance discussions.",
+        "objective": "Strengthen climate diplomacy and regional cooperation.",
+        "participants": "Climate experts, policymakers, development partners, and researchers.",
+        "expected_outcome": "Regional climate policy roadmap and collaborative initiatives.",
+        "date": "June 2026",
+        "status": "upcoming"
+    }
+},
+{
+    "model": "event.programhighlight",
+    "pk": 1,
+    "fields": {
+        "program": 1,
+        "text": "Inaugurated by Rt. Hon. KP Sharma Oli",
+        "order": 1
+    }
+},
+{
+    "model": "event.programhighlight",
+    "pk": 2,
+    "fields": {
+        "program": 1,
+        "text": "200+ participants",
+        "order": 2
+    }
+},
+{
+    "model": "event.programhighlight",
+    "pk": 3,
+    "fields": {
+        "program": 1,
+        "text": "International speakers and experts",
+        "order": 3
+    }
+},
+{
+    "model": "event.programhighlight",
+    "pk": 4,
+    "fields": {
+        "program": 1,
+        "text": "Policy-oriented discussions",
+        "order": 4
+    }
+},
+{
+    "model": "research_area.theme",
+    "pk": 1,
+    "fields": {
+        "name": "Foreign Policy and Diplomacy",
+        "description": "Research examining bilateral and multilateral relations, diplomatic engagement, regional cooperation frameworks, conflict resolution mechanisms, and the evolving strategic interests shaping international affairs across South Asia and beyond."
+    }
+},
+{
+    "model": "research_area.theme",
+    "pk": 2,
+    "fields": {
+        "name": "Geopolitics and Strategic Affairs",
+        "description": "Trade corridors, connectivity & cross-border investment"
+    }
+},
+{
+    "model": "research_area.theme",
+    "pk": 3,
+    "fields": {
+        "name": "Economic Diplomacy and Development Cooperation",
+        "description": "Glacial systems, water security & climate resilience"
+    }
+},
+{
+    "model": "research_area.theme",
+    "pk": 4,
+    "fields": {
+        "name": "Climate and Environmental Diplomacy",
+        "description": "Sustainable travel, heritage & local livelihoods"
+    }
+},
+{
+    "model": "research_area.theme",
+    "pk": 5,
+    "fields": {
+        "name": "Technology, AI and Data Diplomacy",
+        "description": "Trade corridors, connectivity & cross-border investment"
+    }
+},
+{
+    "model": "research_area.publicationtype",
+    "pk": 1,
+    "fields": {
+        "category": "Technical"
+    }
+},
+{
+    "model": "research_area.publicationtype",
+    "pk": 2,
+    "fields": {
+        "category": "Health care"
+    }
+},
+{
+    "model": "research_area.publicationtype",
+    "pk": 3,
+    "fields": {
+        "category": "Construction"
+    }
+},
+{
+    "model": "research_area.publicationtype",
+    "pk": 4,
+    "fields": {
+        "category": "IT"
+    }
+},
+{
+    "model": "research_area.publication",
+    "pk": 1,
+    "fields": {
+        "title": "Anim molestias consectetur molestias cum voluptatum repellendus In deserunt ullamco consequuntur dolore est voluptatibus",
+        "category": 3,
+        "excerpt": "Commodo sit saepe qu",
+        "theme": 1,
+        "date": "2026-06-26",
+        "pdf": "",
+        "created_at": "2026-06-26T09:38:39.449Z"
+    }
+},
+{
+    "model": "research_area.publication",
+    "pk": 2,
+    "fields": {
+        "title": "HELLO",
+        "category": 3,
+        "excerpt": "ASDFG",
+        "theme": 1,
+        "date": "2025-06-25",
+        "pdf": "publications/pdfs/foreward.pdf",
+        "created_at": "2026-06-26T09:39:30.030Z"
+    }
+},
+{
+    "model": "research_area.publication",
+    "pk": 3,
+    "fields": {
+        "title": "IT",
+        "category": 1,
+        "excerpt": "this is an it info reseach",
+        "theme": 5,
+        "date": "2026-07-05",
+        "pdf": "publications/pdfs/9bd9cef4-7fee-4182-b43c-cb464df899bc.pdf",
+        "created_at": "2026-07-05T05:47:53.122Z"
+    }
+},
+{
+    "model": "research_area.book",
+    "pk": 4,
+    "fields": {
+        "title": "hiiiii",
+        "book_cover": "books/image/0nKt4_zKrs6cD.jpg",
+        "book": "books/pdf/a_szUfdq7.pdf",
+        "author": "Ridhika"
+    }
+},
+{
+    "model": "research_area.book",
+    "pk": 5,
+    "fields": {
+        "title": "The Water Frontier",
+        "book_cover": "books/image/d_logo.png",
+        "book": "books/pdf/9bd9cef4-7fee-4182-b43c-cb464df899bc.pdf",
+        "author": "A. Thapa & R. Sharma"
+    }
+},
+{
+    "model": "research_area.book",
+    "pk": 6,
+    "fields": {
+        "title": "wadfer",
+        "book_cover": "books/image/goal.png",
+        "book": "books/pdf/9bd9cef4-7fee-4182-b43c-cb464df899bc_Gz7Evtg.pdf",
+        "author": "asdfe"
+    }
+},
+{
+    "model": "research_area.globalcategory",
+    "pk": 1,
+    "fields": {
+        "category": "IT"
+    }
+},
+{
+    "model": "research_area.globalcategory",
+    "pk": 2,
+    "fields": {
+        "category": "Health care"
+    }
+},
+{
+    "model": "research_area.globalcategory",
+    "pk": 3,
+    "fields": {
+        "category": "Construction"
+    }
+},
+{
+    "model": "research_area.globalcategory",
+    "pk": 4,
+    "fields": {
+        "category": "Technical"
+    }
+},
+{
+    "model": "research_area.gloabalpower",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "title": "IT ME ARJUN",
+        "description": "SJFDBSUIFJB BUWEJFBWIUEJF JEWBFIWUJFV JWEDBF I",
+        "pdf": "global/a.pdf"
+    }
+},
+{
+    "model": "research_area.gloabalpower",
+    "pk": 2,
+    "fields": {
+        "category": 3,
+        "title": "Id eveniet laboriosam laboris et nulla commodi accusantium ratione pariatur Soluta omnis dolor incididunt eiusmod sapiente",
+        "description": "Nihil iusto at deser",
+        "pdf": ""
+    }
+},
+{
+    "model": "research_area.gloabalpower",
+    "pk": 3,
+    "fields": {
+        "category": 2,
+        "title": "Quibusdam qui ut commodo porro sed nisi sunt sed qui soluta",
+        "description": "Accusantium a cupidi",
+        "pdf": "global/Table_Of__Content.pdf"
+    }
+},
+{
+    "model": "research_area.researchartical",
+    "pk": 1,
+    "fields": {
+        "Cover_image": "resarch/image/chairman.png",
+        "title": "Research Article Title 1",
+        "description": "This is first publish research article with the context of the innovation research foundation.",
+        "file": "Artical/file/9bd9cef4-7fee-4182-b43c-cb464df899bc.pdf"
+    }
+},
+{
+    "model": "home_section.highlightsection",
+    "pk": 1,
+    "fields": {
+        "title": "The Himalayan Dialogue",
+        "tagline": "IRF' flagship platform for strategic dialogue on geopolitics, diplomacy, and regional cooperation in the Himalayan region.",
+        "description": "The inaugural edition, held on April 7, 2025, brought together 200+ diplomats, policymakers, and experts to explore Nepal' role in an evolving global landscape.",
+        "button_text": "View Event Page",
+        "button_url": "",
+        "slide_image_1": "highlights/chairman.png",
+        "slide_image_2": "highlights/dummy.png",
+        "slide_image_3": "highlights/chairman_RG7eJBO.png",
+        "created_at": "2026-07-05T05:11:32.569Z"
+    }
+},
+{
+    "model": "home_section.session",
+    "pk": 1,
+    "fields": {
+        "highlight": 1,
+        "title": "Shifting Global Order",
+        "subtitle": "Navigating new geopolitical realities",
+        "image": "sessions/dummy.png",
+        "order": 1
+    }
+},
+{
+    "model": "home_section.session",
+    "pk": 2,
+    "fields": {
+        "highlight": 1,
+        "title": "Nepal's path to prosperity",
+        "subtitle": "Exploring economic diplomacy",
+        "image": "sessions/chairman.png",
+        "order": 2
+    }
+},
+{
+    "model": "home_section.session",
+    "pk": 3,
+    "fields": {
+        "highlight": 1,
+        "title": "Nepal's foreign policy",
+        "subtitle": "Charting an independent course",
+        "image": "sessions/dummy_7GZ7xw7.png",
+        "order": 3
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2026-06-19T07:02:51.406Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "1",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2026-06-21T09:53:59.908Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "commentaries",
+            "commentaries"
+        ],
+        "object_id": "1",
+        "object_repr": "nepal bank limited",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2026-06-21T09:54:10.712Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "commentaries",
+            "commentaries"
+        ],
+        "object_id": "2",
+        "object_repr": "asdfghjkl",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2026-06-21T09:54:19.232Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "commentaries",
+            "commentaries"
+        ],
+        "object_id": "3",
+        "object_repr": "qwertyuio",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2026-06-22T06:12:46.531Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "1",
+        "object_repr": "Cybersecurity",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2026-06-22T06:57:07.112Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "1",
+        "object_repr": "Mission and Vision",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2026-06-26T09:33:18.640Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "1",
+        "object_repr": "Mt.Everest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2026-06-26T09:34:17.225Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "2",
+        "object_repr": "ITS MY",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2026-06-26T09:34:43.979Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "3",
+        "object_repr": "hello",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2026-06-26T09:35:08.163Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "4",
+        "object_repr": "hiiiii",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2026-06-26T09:35:25.371Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "2",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2026-06-26T09:35:49.594Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "3",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2026-06-26T09:35:58.141Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "4",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2026-06-26T09:36:17.309Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "globalcategory"
+        ],
+        "object_id": "1",
+        "object_repr": "Technical",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2026-06-26T09:36:23.109Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "globalcategory"
+        ],
+        "object_id": "2",
+        "object_repr": "Health care",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2026-06-26T09:36:30.476Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "globalcategory"
+        ],
+        "object_id": "3",
+        "object_repr": "Construction",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2026-06-26T09:36:39.609Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "globalcategory"
+        ],
+        "object_id": "4",
+        "object_repr": "Technical",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2026-06-26T09:36:49.896Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "globalcategory"
+        ],
+        "object_id": "1",
+        "object_repr": "IT",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2026-06-26T09:37:18.811Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "gloabalpower"
+        ],
+        "object_id": "1",
+        "object_repr": "IT ME ARJUN",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2026-06-26T09:37:29.023Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "gloabalpower"
+        ],
+        "object_id": "2",
+        "object_repr": "Id eveniet laboriosam laboris et nulla commodi accusantium ratione pariatur Soluta omnis dolor incididunt eiusmod sapiente",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2026-06-26T09:37:48.262Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "gloabalpower"
+        ],
+        "object_id": "3",
+        "object_repr": "Quibusdam qui ut commodo porro sed nisi sunt sed qui soluta",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2026-06-26T09:38:06.110Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publicationtype"
+        ],
+        "object_id": "1",
+        "object_repr": "Technical",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2026-06-26T09:38:08.317Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publicationtype"
+        ],
+        "object_id": "2",
+        "object_repr": "Health care",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2026-06-26T09:38:11.141Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publicationtype"
+        ],
+        "object_id": "3",
+        "object_repr": "Construction",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2026-06-26T09:38:13.326Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publicationtype"
+        ],
+        "object_id": "4",
+        "object_repr": "IT",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2026-06-26T09:38:39.450Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publication"
+        ],
+        "object_id": "1",
+        "object_repr": "Anim molestias consectetur molestias cum voluptatum repellendus In deserunt ullamco consequuntur dolore est voluptatibus",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2026-06-26T09:39:30.031Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publication"
+        ],
+        "object_id": "2",
+        "object_repr": "HELLO",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2026-06-26T09:40:35.733Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "researchartical"
+        ],
+        "object_id": "1",
+        "object_repr": "Non deserunt eum sint aliquip elit omnis itaque officiis",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2026-06-26T09:41:42.028Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "5",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2026-06-26T09:42:02.366Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "6",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2026-06-26T09:42:14.641Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "7",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2026-06-26T09:42:51.779Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "8",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2026-06-26T09:44:28.960Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "2",
+        "object_repr": "Mission and Vision",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2026-06-26T09:54:12.456Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "1",
+        "object_repr": "Mission and Vision",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2026-06-26T09:55:52.727Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "2",
+        "object_repr": "Mission and Vision",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2026-06-26T09:55:59.130Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "3",
+        "object_repr": "Mission and Vision",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2026-06-26T09:57:06.733Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "companymission"
+        ],
+        "object_id": "4",
+        "object_repr": "Mission and Vision",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2026-06-28T04:49:03.885Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "4",
+        "object_repr": "Gallery image",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2026-06-28T04:49:28.019Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "homesection",
+            "gallery"
+        ],
+        "object_id": "9",
+        "object_repr": "Gallery image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2026-06-28T05:11:10.031Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "about_us",
+            "recentachievement"
+        ],
+        "object_id": "1",
+        "object_repr": "achivement 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2026-06-28T05:41:59.066Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "1",
+        "object_repr": "Foreign Policy and Diplomacy",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2026-06-28T05:42:13.303Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "2",
+        "object_repr": "Geopolitics and Strategic Affairs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2026-06-28T05:42:24.362Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "3",
+        "object_repr": "Economic Diplomacy and Development Cooperation",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2026-06-28T05:42:36.428Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "4",
+        "object_repr": "Climate and Environmental Diplomacy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2026-06-28T05:42:49.290Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "theme"
+        ],
+        "object_id": "5",
+        "object_repr": "Technology, AI and Data Diplomacy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2026-06-28T06:15:08.693Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "5",
+        "object_repr": "The Water Frontier",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2026-06-28T06:47:54.555Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "5",
+        "object_repr": "The Water Frontier",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Book\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2026-06-28T06:48:32.414Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "5",
+        "object_repr": "The Water Frontier",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2026-06-28T06:49:26.173Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "6",
+        "object_repr": "wadfer",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2026-06-28T06:50:16.897Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "3",
+        "object_repr": "hello",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2026-06-28T06:50:16.897Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "2",
+        "object_repr": "ITS MY",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2026-06-28T06:50:16.897Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "book"
+        ],
+        "object_id": "1",
+        "object_repr": "Mt.Everest",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2026-07-01T19:18:23.369Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "event",
+            "program"
+        ],
+        "object_id": "1",
+        "object_repr": "The Himalayan Dialogue",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"program highlight\", \"object\": \"Inaugurated by Rt. Hon. KP Sharma Oli\"}}, {\"added\": {\"name\": \"program highlight\", \"object\": \"200+ participants\"}}, {\"added\": {\"name\": \"program highlight\", \"object\": \"International speakers and experts\"}}, {\"added\": {\"name\": \"program highlight\", \"object\": \"Policy-oriented discussions\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2026-07-01T19:20:15.188Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "event",
+            "program"
+        ],
+        "object_id": "2",
+        "object_repr": "South Asia Strategic Forum 2026",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2026-07-01T19:21:14.730Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "event",
+            "program"
+        ],
+        "object_id": "3",
+        "object_repr": "Climate Diplomacy Summit",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2026-07-05T05:11:32.572Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "home_section",
+            "highlightsection"
+        ],
+        "object_id": "1",
+        "object_repr": "The Himalayan Dialogue",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"session\", \"object\": \"Shifting Global Order\"}}, {\"added\": {\"name\": \"session\", \"object\": \"Nepal's path to prosperity\"}}, {\"added\": {\"name\": \"session\", \"object\": \"Nepal's foreign policy\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2026-07-05T05:39:04.031Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "researchartical"
+        ],
+        "object_id": "1",
+        "object_repr": "Research Article Title 1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Cover image\", \"Title\", \"Description\", \"File\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2026-07-05T05:47:53.123Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "research_area",
+            "publication"
+        ],
+        "object_id": "3",
+        "object_repr": "IT",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]

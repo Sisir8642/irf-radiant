@@ -11,14 +11,11 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-// ─── Extend window with jQuery ─────────────────────────────────────────────
 declare global { interface Window { $: any } }
 
-// ─── API base ─────────────────────────────────────────────────────────────
-const BASE = "http://127.0.0.1:8000/api";
+const BASE = process.env.NEXT_PUBLIC_BASE_URL
 const TTL  = 10 * 60 * 1000; // 10 minutes
 
-// ─── Cache read/write ──────────────────────────────────────────────────────
 function cacheRead(key: string) {
   try {
     const raw = localStorage.getItem(key);
@@ -32,14 +29,13 @@ function cacheWrite(key: string, data: unknown) {
   try { localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data })); } catch {}
 }
 
-// ─── jQuery-based fetch with cache ────────────────────────────────────────
 function apiFetch<T>(endpoint: string): Promise<T> {
   const key = `irf__${endpoint}`;
   const hit = cacheRead(key);
   if (hit) return Promise.resolve(hit as T);
   return new Promise((resolve, reject) => {
     window.$.ajax({
-      url: `${BASE}${endpoint}`,
+      url: `${BASE}/api${endpoint}`,
       method: "GET",
       dataType: "json",
       success(data: T) { cacheWrite(key, data); resolve(data); },
@@ -347,9 +343,6 @@ export default function ResearchPage() {
                     </Button>
                   </a>
                 )}
-                <Button variant="outline" className="gap-2 rounded-full border-[#1C2B33]/20 text-black hover:bg-white">
-                  Read summary <ArrowUpRight className="h-4 w-4" />
-                </Button>
               </div>
             </motion.div>
           </div>

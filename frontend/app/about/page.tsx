@@ -21,18 +21,23 @@ const fadeUpVariant = {
 export default function AboutPage() {
     // Vision & Mission State
     const [visionData, setVisionData] = useState('');
-    const [missionItems, setMissionItems] = useState([]);
+    const [missionItems, setMissionItems] = useState<string[]>([]);
     const [loadingVision, setLoadingVision] = useState(true);
     const [errorVision, setErrorVision] = useState(null);
 
     // Recent Achievements State
-    const [achievements, setAchievements] = useState([]);
+    const [achievements, setAchievements] = useState<Achievement[]>([]);
     const [loadingAchievements, setLoadingAchievements] = useState(true);
     const [errorAchievements, setErrorAchievements] = useState(null);
 
+    interface Achievement {
+    title: string;
+    description: string;
+}
+
     // Fetch Vision & Mission
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/Mission')
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/Mission`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -71,7 +76,7 @@ export default function AboutPage() {
 
     // Fetch Recent Achievements
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/RecentAchievement')
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/RecentAchievement`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -81,7 +86,7 @@ export default function AboutPage() {
             .then(data => {
                 console.log('Achievements API Response:', data);
                 
-                let achievementsList = [];
+                let achievementsList: Achievement[] = [];
                 
                 if (Array.isArray(data) && data.length > 0) {
                     achievementsList = data.map(item => ({
@@ -358,7 +363,7 @@ export default function AboutPage() {
             </section>
 
             {/* MESSAGE FROM CHAIRPERSON */}
-            <section className="relative py-24 overflow-hidden bg-[#0F172A]">
+            <section className="relative py-3 overflow-hidden bg-[#0F172A]">
                 <div className="absolute inset-0">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-[#7ABDE4]/10 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#2B698E]/20 rounded-full blur-3xl" />
@@ -371,25 +376,24 @@ export default function AboutPage() {
                     />
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-6">
+                <div className="relative max-w-7xl mx-auto px-6 ">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
+                        className="text-center mb-10"
                     >
                         <span className="uppercase tracking-[4px] text-[#7ABDE4] text-sm font-medium">
                             Leadership Message
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mt-1">
                             Message From The Chairperson
                         </h2>
                         <div className="w-24 h-1 bg-[#7ABDE4] mx-auto mt-6 rounded-full" />
                     </motion.div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 items-center">
-                        {/* Chairperson Image */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[530px_1fr] gap-8 items-center">
                         <motion.div
                             variants={leftVariant}
                             initial="hidden"
@@ -404,7 +408,7 @@ export default function AboutPage() {
                                 className="relative"
                             >
                                 <div className="absolute inset-0 bg-[#7ABDE4]/20 rounded-3xl blur-2xl scale-95" />
-                                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                                     <img
                                         src="/images/chairman.png"
                                         alt="Gopal Khanal, PhD – Chairman, IRF"
@@ -443,7 +447,7 @@ export default function AboutPage() {
                                     transition={{ duration: 6, repeat: Infinity }}
                                     className="mb-6"
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-14 h-14 text-[#7ABDE4]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-10 h-10 text-[#7ABDE4]">
                                         <path d="M7.17 6A5.001 5.001 0 0 0 2 11v7h7v-7H5a3 3 0 0 1 2.17-2.88L7.17 6Zm10 0A5.001 5.001 0 0 0 12 11v7h7v-7h-4a3 3 0 0 1 2.17-2.88V6Z" />
                                     </svg>
                                 </motion.div>
@@ -452,20 +456,20 @@ export default function AboutPage() {
                                     At a time when the global landscape is defined by volatility, power transitions, and urgent planetary challenges, Nepal must find its voice not only as an observer but as an active contributor to global discourse.
                                 </p>
 
-                                <div className="space-y-6 text-white/80 leading-8">
+                                <div className="space-y-5 text-white/80 leading-8">
                                     <p>The Innovate Research Foundation was established with this conviction.</p>
-                                    <p>IRF represents more than a think tank; it is a platform for insight, dialogue, and impact. Our mission is to generate ideas that matter, shape policies that endure, and connect Nepal's strategic thinking to regional and global narratives.</p>
+                                    <p>IRF represents more than a think tank: it is a platform for insight, dialogue, and impact. Our mission is to generate ideas that matter, shape policies that endure, and connect Nepal's strategic thinking to regional and global narratives.</p>
                                     <p>As Chairperson, I am proud to lead a team that values intellectual independence, constructive engagement, and purpose-driven research.</p>
                                     <p>We invite scholars, practitioners, and institutions to join us in our journey to inform, innovate, and influence for a better tomorrow.</p>
                                 </div>
 
-                                <div className="mt-10 pt-8 border-t border-white/10">
+                                <div className="mt-4 pt-2 border-t border-white/10">
                                     <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: 80 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 1 }}
-                                        className="h-[2px] bg-[#7ABDE4] mb-5"
+                                        className="h-[2px] bg-[#7ABDE4] mb-2"
                                     />
                                     <h4 className="text-xl font-semibold text-white">Gopal Khanal, PhD</h4>
                                     <p className="text-[#7ABDE4] tracking-[2px] text-sm uppercase mt-1">Chairman, Innovate Research Foundation</p>

@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'commentaries',
     'event',
     'contact',
-    'research_area'
+    'research_area',
+    'home_section',
 
 ]
 
